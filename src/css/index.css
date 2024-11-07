@@ -1,3 +1,8 @@
+:root {
+  --textColot: #fff;
+  --borderRadius: 15px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -30,14 +35,11 @@ img {
 
 button {
   border: none;
+  color: var(--textColot);
 }
 
 input {
   outline: none;
-}
-
-:root {
-  --textColot: #fff;
 }
 
 .BRR {
@@ -74,25 +76,31 @@ html {
   color: var(--textColot);
 }
 
-.top__balance {
+.top {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.top_balance {
   height: 75px;
   position: relative;
   padding: 6px;
   font-family: Arial, sans-serif;
   overflow: hidden;
-  background: linear-gradient(to right, rgba(51, 167, 130, 0.3607843137), rgba(255, 99, 71, 0));
-  border-radius: 15px;
+  background: linear-gradient(to right, rgba(51, 167, 130, 0.3607843137), rgba(51, 167, 130, 0.2196078431));
+  border-radius: var(--borderRadius);
   z-index: 1;
   display: flex;
   align-items: center;
   justify-content: space-between;
   box-shadow: 0px 0px 20px rgba(51, 167, 130, 0.3215686275), 0px 0px 20px rgba(51, 167, 130, 0.3490196078);
 }
-.top__balance::before {
+.top_balance::before {
   content: "";
   position: absolute;
   inset: 0;
-  border-radius: 15px;
+  border-radius: var(--borderRadius);
   padding: 1px;
   background: linear-gradient(to right, #33a782, rgba(51, 167, 130, 0));
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -100,8 +108,54 @@ html {
   mask-composite: exclude;
   z-index: -1;
 }
+.top_balance img {
+  height: 45px;
+  width: 45px;
+}
+
+.top_balance__left {
+  display: flex;
+  gap: 8px;
+}
+.top_balance__left div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.top_balance__left div span {
+  font-size: 12px;
+}
+.top_balance__left div p {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.top_balance__right {
+  height: 100%;
+}
+.top_balance__right button {
+  width: 77px;
+  height: 100%;
+  border-radius: var(--borderRadius);
+  background-color: rgba(175, 190, 241, 0.1019607843);
+}
+.top_balance__right button img {
+  height: auto;
+  width: 34px;
+}
+.top_balance__right button span {
+  font-size: 12px;
+}
 
 .footer {
   position: absolute;
   bottom: 0;
+}
+
+.top_extraction {
+  display: flex;
+}
+
+.top_extraction__right-btn {
+  border-radius: var(--borderRadius);
 }/*# sourceMappingURL=index.css.map */

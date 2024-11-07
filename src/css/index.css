@@ -391,7 +391,42 @@ main {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  overflow: hidden;
 }
 .footer button {
-  background-color: unset;
+  height: 73px;
+  width: 71px;
+  position: relative;
+  padding: 10px;
+  overflow: hidden;
+  background: linear-gradient(to bottom, rgb(45, 34, 62), rgba(24, 24, 29, 0));
+  border-radius: var(--borderRadius) var(--borderRadius) 0 0;
+  z-index: 1;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+  box-shadow: 0px 0px 20px rgba(84, 31, 165, 0.7019607843);
+  flex-direction: column;
+}
+.footer button.active {
+  background: #000;
+}
+.footer button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--borderRadius);
+  padding: 1px;
+  background: linear-gradient(to bottom, #ffffff, rgba(51, 167, 130, 0));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
+}
+.footer button img {
+  width: 25px;
+}
+.footer button p {
+  font-size: 12px;
 }/*# sourceMappingURL=index.css.map */

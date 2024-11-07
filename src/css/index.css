@@ -61,6 +61,7 @@ html {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  font-family: system-ui;
 }
 
 .body {
@@ -86,7 +87,6 @@ html {
   height: 75px;
   position: relative;
   padding: 6px;
-  font-family: Arial, sans-serif;
   overflow: hidden;
   background: linear-gradient(to right, rgba(51, 167, 130, 0.3607843137), rgba(51, 167, 130, 0.2196078431));
   border-radius: var(--borderRadius);
@@ -154,8 +154,81 @@ html {
 
 .top_extraction {
   display: flex;
+  justify-content: space-between;
+  height: 75px;
+  gap: 8px;
+}
+
+.top_extraction__left {
+  flex-grow: 1;
+  height: 75px;
+  position: relative;
+  padding: 6px;
+  overflow: hidden;
+  background: linear-gradient(to right, rgba(91, 48, 165, 0.5215686275), rgba(94, 51, 167, 0.2509803922));
+  border-radius: var(--borderRadius);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0px 0px 20px rgba(91, 48, 165, 0.5215686275), 0px 0px 20px rgba(91, 48, 165, 0.5215686275);
+}
+.top_extraction__left::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--borderRadius);
+  padding: 1px;
+  background: linear-gradient(to right, #5b30a5, rgba(91, 48, 165, 0.0470588235));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
+}
+.top_extraction__left img {
+  height: 45px;
+  width: 45px;
+}
+
+.top_extraction__left-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+  width: 100%;
+}
+.top_extraction__left-data span {
+  font-size: 12px;
+}
+.top_extraction__left-data div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.top_extraction__left-data div p {
+  font-size: 20px;
+  font-weight: bold;
+}
+.top_extraction__left-data div button {
+  background-color: rgba(255, 255, 255, 0.1411764706);
+  height: 24px;
+  width: 87px;
+  border-radius: var(--borderRadius);
+  font-size: 12px;
 }
 
 .top_extraction__right-btn {
   border-radius: var(--borderRadius);
+  background: linear-gradient(to bottom, #f04548, #990003);
+  border: 1px solid #f04548;
+  display: flex;
+  gap: 4px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 135px;
+}
+.top_extraction__right-btn div button span {
+  font-size: 12px;
 }/*# sourceMappingURL=index.css.map */

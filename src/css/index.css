@@ -244,7 +244,7 @@ main {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -267,13 +267,34 @@ main {
   width: 93%;
   background-color: rgba(34, 15, 55, 0.7882352941);
   border-radius: 50%;
-  box-shadow: inset 0px 0px 36px #8d51d4;
+  box-shadow: inset 0px 0px 36px rgba(141, 81, 212, 0.5803921569);
 }
 .hamster-circle canvas {
   position: absolute;
   width: 100%;
   top: 0;
   left: 0;
+}
+.hamster-circle img {
+  position: absolute;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 322px;
+}
+
+.center_remarks {
+  position: absolute;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  transform: translate(48%, 18%);
+  background-color: #fff;
+  color: #000;
+  padding: 8px;
+  font-size: 12px;
+  border-radius: var(--borderRadius);
 }
 
 .footer {

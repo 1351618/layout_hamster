@@ -403,6 +403,7 @@ main {
   flex-direction: row;
   justify-content: space-around;
   overflow: hidden;
+  padding: 0 10px;
 }
 .footer button {
   height: 73px;

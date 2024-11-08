@@ -70,9 +70,33 @@
             <span>Хомяк уснёт через: </span>
             <p id="countdown"></p>
           </div>
-          <p class="add-inform">i</p>
+          <button class="add-inform" id="addInformBtn">
+            <img src="./src/images/notification.svg" alt="" />
+          </button>
         </div>
       </section>
+      <div class="popup">
+        <div class="popup_content">
+          <hr />
+          <img src="./src/images/notification.svg" alt="" />
+
+          <p>
+            Ваш хомяк работает ровно 24 часа, после чего он уснёт. Чтобы
+            разбудить его и включить в работу на 24 часа, надо нажать на него.
+            <br />
+            <br />
+            Вы можете нажимать по хомяку в любое время.Счётчик обновится.
+            <b>DOP TEXT</b>
+          </p>
+          <div class="popup_content__input"><input type="text" /></div>
+
+          <button id="popupNotActive">
+            <img src="./src//images/check_mark.svg" alt="" /><span
+              >Понятно</span
+            >
+          </button>
+        </div>
+      </div>
     </main>
 
     <footer class="footer">
@@ -97,7 +121,9 @@
         <p>Настройки</p>
       </button>
     </footer>
+
     <script src="./src/js/circleBar.js" type="module"></script>
     <script src="./src/js/countdown.js" type="module"></script>
+    <script src="./src/js/popup.js" type="module"></script>
   </body>
 </html>

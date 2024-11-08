@@ -65,7 +65,7 @@ input {
 }
 
 html {
-  background-color: #626262;
+  background-color: #110315;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -103,7 +103,9 @@ main {
 }
 
 .top_balance {
-  height: 75px;
+  height: auto;
+  min-height: 75px;
+  flex-wrap: wrap;
   position: relative;
   padding: 6px;
   overflow: hidden;
@@ -114,6 +116,11 @@ main {
   align-items: center;
   justify-content: space-between;
   box-shadow: 0px 0px 20px rgba(51, 167, 130, 0.3215686275), 0px 0px 20px rgba(51, 167, 130, 0.3490196078);
+}
+@media (max-width: 335px) {
+  .top_balance {
+    justify-content: center;
+  }
 }
 .top_balance::before {
   content: "";
@@ -128,8 +135,13 @@ main {
   z-index: -1;
 }
 .top_balance img {
-  height: 45px;
   width: 45px;
+  aspect-ratio: 1;
+}
+@media (max-width: 440px) {
+  .top_balance img {
+    width: 38px;
+  }
 }
 
 .top_balance__left {
@@ -148,6 +160,11 @@ main {
   font-size: 20px;
   font-weight: bold;
 }
+@media (max-width: 440px) {
+  .top_balance__left div p {
+    font-size: 16px;
+  }
+}
 
 .top_balance__right {
   height: 100%;
@@ -155,6 +172,7 @@ main {
 .top_balance__right button {
   width: 77px;
   height: 100%;
+  max-height: 66px;
   border-radius: var(--borderRadius);
   background-color: rgba(175, 190, 241, 0.1019607843);
 }
@@ -180,7 +198,8 @@ main {
 
 .top_extraction__left {
   flex-grow: 1;
-  height: 75px;
+  height: auto;
+  min-height: 75px;
   position: relative;
   padding: 6px;
   overflow: hidden;
@@ -205,8 +224,13 @@ main {
   z-index: -1;
 }
 .top_extraction__left img {
-  height: 45px;
   width: 45px;
+  aspect-ratio: 1;
+}
+@media (max-width: 440px) {
+  .top_extraction__left img {
+    width: 38px;
+  }
 }
 
 .top_extraction__left-data {
@@ -229,12 +253,23 @@ main {
   font-size: 20px;
   font-weight: bold;
 }
+@media (max-width: 440px) {
+  .top_extraction__left-data div p {
+    font-size: 16px;
+  }
+}
 .top_extraction__left-data div button {
   background-color: rgba(255, 255, 255, 0.1411764706);
   height: 24px;
   width: 87px;
   border-radius: var(--borderRadius);
   font-size: 12px;
+  padding: 0 6px;
+}
+@media (max-width: 440px) {
+  .top_extraction__left-data div button {
+    width: auto;
+  }
 }
 
 .top_extraction__right-btn {
@@ -247,6 +282,12 @@ main {
   align-items: center;
   justify-content: center;
   width: 135px;
+  padding: 4px;
+}
+@media (max-width: 440px) {
+  .top_extraction__right-btn {
+    width: auto;
+  }
 }
 .top_extraction__right-btn div button span {
   font-size: 12px;
@@ -258,17 +299,22 @@ main {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  padding-top: 10px;
+  padding: 4% 0 8% 0;
 }
 
 .hamster-circle {
-  height: 412px;
-  width: 412px;
+  width: 100%;
+  aspect-ratio: 1;
   background-color: rgba(60, 51, 77, 0.77);
   border-radius: 50%;
   padding: 10px;
   position: relative;
   box-shadow: 0px 0px 60px #8d51d4;
+}
+@media (max-height: 800px) {
+  .hamster-circle {
+    width: 70%;
+  }
 }
 .hamster-circle::after {
   content: "";
@@ -294,7 +340,7 @@ main {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 322px;
+  height: 75%;
 }
 
 .center_remarks {
@@ -311,10 +357,10 @@ main {
 }
 
 .center_hamster-got {
-  height: 75px;
-  width: 306px;
+  height: auto;
+  min-height: 75px;
   position: relative;
-  padding: 6px;
+  padding: 6px 12px;
   overflow: hidden;
   background: linear-gradient(to right, rgb(64, 26, 65), rgb(63, 26, 65));
   border-radius: var(--borderRadius);
@@ -341,6 +387,20 @@ main {
 .center_hamster-got p {
   font-size: 32px;
   font-weight: bold;
+}
+@media (max-width: 440px) {
+  .center_hamster-got p {
+    font-size: 25px;
+  }
+}
+.center_hamster-got img {
+  width: 45px;
+  aspect-ratio: 1;
+}
+@media (max-width: 440px) {
+  .center_hamster-got img {
+    width: 38px;
+  }
 }
 
 .center_hamster-sleep {
@@ -395,7 +455,7 @@ main {
   margin: 0px 10px;
   position: absolute;
   bottom: 0;
-  z-index: 100;
+  z-index: 110;
   left: 0px;
   right: 0px;
   background: rgba(108, 76, 144, 0.25);
@@ -528,6 +588,7 @@ main {
   justify-content: space-around;
   overflow: hidden;
   padding: 0 10px;
+  z-index: 100;
 }
 .footer button {
   height: 73px;

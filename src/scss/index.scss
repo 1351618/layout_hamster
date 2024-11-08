@@ -57,7 +57,7 @@ input {
   border: 2px solid #3cff00;
 }
 html {
-  background-color: #626262;
+  background-color: #110315;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -94,7 +94,9 @@ main {
   gap: 8px;
 }
 .top_balance {
-  height: 75px;
+  height: auto;
+  min-height: 75px;
+  flex-wrap: wrap;
   position: relative;
   padding: 6px;
 
@@ -106,6 +108,9 @@ main {
   align-items: center;
   justify-content: space-between;
   box-shadow: 0px 0px 20px #33a78252, 0px 0px 20px #33a78259;
+  @media (max-width: 335px) {
+    justify-content: center;
+  }
 
   &::before {
     content: "";
@@ -125,8 +130,11 @@ main {
     z-index: -1;
   }
   img {
-    height: 45px;
     width: 45px;
+    aspect-ratio: 1;
+    @media (max-width: 440px) {
+      width: 38px;
+    }
   }
 }
 
@@ -143,6 +151,9 @@ main {
     p {
       font-size: 20px;
       font-weight: bold;
+      @media (max-width: 440px) {
+        font-size: 16px;
+      }
     }
   }
 }
@@ -152,6 +163,7 @@ main {
   button {
     width: 77px;
     height: 100%;
+    max-height: 66px;
     border-radius: var(--borderRadius);
     background-color: #afbef11a;
     img {
@@ -163,6 +175,7 @@ main {
     }
   }
 }
+
 .footer {
   position: absolute;
   bottom: 0;
@@ -177,7 +190,8 @@ main {
 
 .top_extraction__left {
   flex-grow: 1;
-  height: 75px;
+  height: auto;
+  min-height: 75px;
   position: relative;
   padding: 6px;
   overflow: hidden;
@@ -211,8 +225,11 @@ main {
     z-index: -1;
   }
   img {
-    height: 45px;
     width: 45px;
+    aspect-ratio: 1;
+    @media (max-width: 440px) {
+      width: 38px;
+    }
   }
 }
 
@@ -235,6 +252,9 @@ main {
     p {
       font-size: 20px;
       font-weight: bold;
+      @media (max-width: 440px) {
+        font-size: 16px;
+      }
     }
 
     button {
@@ -243,6 +263,10 @@ main {
       width: 87px;
       border-radius: var(--borderRadius);
       font-size: 12px;
+      padding: 0 6px;
+      @media (max-width: 440px) {
+        width: auto;
+      }
     }
   }
 }
@@ -256,6 +280,12 @@ main {
   align-items: center;
   justify-content: center;
   width: 135px;
+  padding: 4px;
+
+  @media (max-width: 440px) {
+    width: auto;
+  }
+
   div {
     button {
       span {
@@ -271,16 +301,20 @@ main {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  padding-top: 10px;
+  padding: 4% 0 8% 0;
 }
 .hamster-circle {
-  height: 412px;
-  width: 412px;
+  width: 100%;
+  aspect-ratio: 1;
   background-color: rgb(60 51 77 / 77%);
   border-radius: 50%;
   padding: 10px;
   position: relative;
   box-shadow: 0px 0px 60px #8d51d4;
+
+  @media (max-height: 800px) {
+    width: 70%;
+  }
   &::after {
     content: "";
     position: absolute;
@@ -305,7 +339,7 @@ main {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 322px;
+    height: 75%;
   }
 }
 
@@ -323,10 +357,10 @@ main {
 }
 
 .center_hamster-got {
-  height: 75px;
-  width: 306px;
+  height: auto;
+  min-height: 75px;
   position: relative;
-  padding: 6px;
+  padding: 6px 12px;
   overflow: hidden;
   background: linear-gradient(to right, rgb(64 26 65), rgb(63 26 65));
   border-radius: var(--borderRadius);
@@ -359,6 +393,17 @@ main {
   p {
     font-size: 32px;
     font-weight: bold;
+    @media (max-width: 440px) {
+      font-size: 25px;
+    }
+  }
+
+  img {
+    width: 45px;
+    aspect-ratio: 1;
+    @media (max-width: 440px) {
+      width: 38px;
+    }
   }
 }
 .center_hamster-sleep {
@@ -419,7 +464,7 @@ main {
   margin: 0px 10px;
   position: absolute;
   bottom: 0;
-  z-index: 100;
+  z-index: 110;
   left: 0px;
   right: 0px;
   background: rgb(108 76 144 / 25%);
@@ -569,6 +614,7 @@ main {
   justify-content: space-around;
   overflow: hidden;
   padding: 0 10px;
+  z-index: 100;
 
   button {
     height: 73px;

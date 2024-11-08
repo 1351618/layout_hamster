@@ -351,9 +351,13 @@ main {
   transform: translate(48%, 18%);
   background-color: #fff;
   color: #000;
-  padding: 8px;
+  padding: 14px;
   font-size: 12px;
   border-radius: var(--borderRadius);
+}
+.center_remarks img {
+  z-index: -1;
+  transform: translate(-50px, -46px);
 }
 
 .center_hamster-got {

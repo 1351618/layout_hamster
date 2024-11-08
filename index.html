@@ -101,30 +101,38 @@
     </main>
 
     <footer class="footer">
-      <button class="active">
+      <input type="radio" name="menu" id="home" checked hidden />
+      <input type="radio" name="menu" id="tasks" hidden />
+      <input type="radio" name="menu" id="partners" hidden />
+      <input type="radio" name="menu" id="dtmex" hidden />
+      <input type="radio" name="menu" id="settings" hidden />
+
+      <label for="home" class="menu-button">
         <img src="./src/images/home.svg" alt="" />
         <p>Главная</p>
-      </button>
-      <button>
+      </label>
+      <label for="tasks" class="menu-button">
         <img src="./src/images/Tasks.svg" alt="" />
         <p>Задания</p>
-      </button>
-      <button>
+      </label>
+      <label for="partners" class="menu-button">
         <img src="./src/images/Partners.svg" alt="" />
         <p>Партнеры</p>
-      </button>
-      <button>
+      </label>
+      <label for="dtmex" class="menu-button">
         <img src="./src/images/DTMEx.svg" alt="" />
         <p>DTMEx</p>
-      </button>
-      <button>
+      </label>
+      <label for="settings" class="menu-button">
         <img src="./src/images/Settings.svg" alt="" />
         <p>Настройки</p>
-      </button>
+      </label>
     </footer>
+   </div>
 
     <script src="./src/js/circleBar.js" type="module"></script>
     <script src="./src/js/countdown.js" type="module"></script>
     <script src="./src/js/popup.js" type="module"></script>
+    <script src="./src/js/footerMenuBtn.js" type="module"></script>
   </body>
 </html>

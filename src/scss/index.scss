@@ -482,7 +482,7 @@ main {
 }
 
 .popup {
-  transform: translateY(100%);
+  transform: translateY(108%);
   margin: 0px 10px;
   position: absolute;
   bottom: 0;
@@ -634,11 +634,11 @@ main {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  overflow: hidden;
+  //   overflow: hidden;
   padding: 0 10px;
   z-index: 100;
 
-  button {
+  label {
     height: 73px;
     width: 71px;
     position: relative;
@@ -655,11 +655,15 @@ main {
     gap: 8px;
     align-items: center;
     justify-content: flex-start;
-    box-shadow: 0px 0px 20px rgba(84, 31, 165, 0.7019607843);
+
     flex-direction: column;
 
     &.active {
       background: #000;
+      box-shadow: 0px -3px 12px #541fa5b3, 0px -5px 19px #541fa5b3;
+      &::before {
+        background: unset;
+      }
     }
 
     &::before {
@@ -668,11 +672,7 @@ main {
       inset: 0;
       border-radius: var(--borderRadius);
       padding: 1px;
-      background: linear-gradient(
-        to bottom,
-        #ffffff,
-        #33a78200
-      ); // Градиент для рамки
+      background: linear-gradient(to bottom, #ffffff, #33a78200);
       -webkit-mask: linear-gradient(#fff 0 0) content-box,
         linear-gradient(#fff 0 0);
       -webkit-mask-composite: xor;

@@ -78,10 +78,14 @@ html {
   position: relative;
   display: flex;
   flex-direction: column;
-  //   padding: 20px 20px 0 20px;
   background-color: #000;
   color: var(--textColot);
   overflow: hidden;
+}
+
+.page {
+  height: 100%;
+  width: 100%;
 }
 
 main {
@@ -122,13 +126,10 @@ main {
     inset: 0;
     border-radius: var(--borderRadius);
     padding: 1px;
-    background: linear-gradient(
-      to right,
-      #33a782,
-      #33a78200
-    ); // Градиент для рамки
+    background: linear-gradient(to right, #33a782, #33a78200);
     -webkit-mask: linear-gradient(#fff 0 0) content-box,
       linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     z-index: -1;
@@ -242,6 +243,7 @@ main {
     ); // Градиент для рамки
     -webkit-mask: linear-gradient(#fff 0 0) content-box,
       linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     z-index: -1;
@@ -409,6 +411,7 @@ main {
     ); // Градиент для рамки
     -webkit-mask: linear-gradient(#fff 0 0) content-box,
       linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     z-index: -1;
@@ -462,6 +465,7 @@ main {
     ); // Градиент для рамки
     -webkit-mask: linear-gradient(#fff 0 0) content-box,
       linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     z-index: -1;
@@ -546,6 +550,7 @@ main {
     ); // Градиент для рамки
     -webkit-mask: linear-gradient(#fff 0 0) content-box,
       linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     z-index: -1;
@@ -595,6 +600,7 @@ main {
       background: linear-gradient(to right, #ffffff, #33a78200);
       -webkit-mask: linear-gradient(#fff 0 0) content-box,
         linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
       -webkit-mask-composite: xor;
       mask-composite: exclude;
       z-index: -1;
@@ -633,6 +639,7 @@ main {
     background: linear-gradient(to right, #ffffff, #b006d9);
     -webkit-mask: linear-gradient(#fff 0 0) content-box,
       linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     z-index: 1;
@@ -656,7 +663,8 @@ main {
 
   /* Скрыть стрелочки в Firefox */
   input[type="number"] {
-    -moz-appearance: textfield;
+    -moz-appearance: textfield; // для Firefox
+    appearance: textfield; // стандартное свойство
   }
 }
 
@@ -750,6 +758,39 @@ main {
 
 // todo popup end ========================
 
+//todo page settings start ++++++++++++++++++++
+
+.settings_main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+  h2 {
+    text-align: center;
+  }
+  button {
+    background-color: unset;
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    border-bottom: 1px solid #ffffff70;
+    img {
+      height: 25px;
+    }
+    span {
+      color: #ffffff80;
+    }
+    > .left {
+      display: flex;
+      flex-direction: row;
+      gap: 16px;
+      align-items: center;
+    }
+  }
+}
+
+//todo page settings end ++++++++++++++++++++++
+
 //todo footer start ======================
 .footer {
   position: absolute;
@@ -800,6 +841,7 @@ main {
       background: linear-gradient(to bottom, #ffffff, #33a78200);
       -webkit-mask: linear-gradient(#fff 0 0) content-box,
         linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
       -webkit-mask-composite: xor;
       mask-composite: exclude;
       z-index: -1;

@@ -92,6 +92,11 @@ html {
   overflow: hidden;
 }
 
+.page {
+  height: 100%;
+  width: 100%;
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -135,6 +140,7 @@ main {
   padding: 1px;
   background: linear-gradient(to right, #33a782, rgba(51, 167, 130, 0));
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   z-index: -1;
@@ -247,6 +253,7 @@ main {
   padding: 1px;
   background: linear-gradient(to right, #5b30a5, rgba(91, 48, 165, 0.0470588235));
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   z-index: -1;
@@ -409,6 +416,7 @@ main {
   padding: 1px;
   background: linear-gradient(to right, #cacaca, rgba(91, 48, 165, 0.0470588235));
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   z-index: -1;
@@ -460,6 +468,7 @@ main {
   padding: 1px;
   background: linear-gradient(to right, #44227e, rgba(91, 48, 165, 0.0470588235));
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   z-index: -1;
@@ -537,6 +546,7 @@ main {
   padding: 1px;
   background: linear-gradient(to right, #ffffff, rgba(51, 167, 130, 0));
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   z-index: -1;
@@ -580,6 +590,7 @@ main {
   padding: 1px;
   background: linear-gradient(to right, #ffffff, rgba(51, 167, 130, 0));
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   z-index: -1;
@@ -615,6 +626,7 @@ main {
   padding: 1px;
   background: linear-gradient(to right, #ffffff, #b006d9);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   z-index: 1;
@@ -636,6 +648,8 @@ main {
 }
 .popup_content__input input[type=number] {
   -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+          appearance: textfield;
 }
 
 .not-active {
@@ -720,6 +734,35 @@ main {
   font-weight: unset;
 }
 
+.settings_main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
+.settings_main h2 {
+  text-align: center;
+}
+.settings_main button {
+  background-color: unset;
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4392156863);
+}
+.settings_main button img {
+  height: 25px;
+}
+.settings_main button span {
+  color: rgba(255, 255, 255, 0.5019607843);
+}
+.settings_main button > .left {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: center;
+}
+
 .footer {
   position: absolute;
   left: 0;
@@ -761,6 +804,7 @@ main {
   padding: 1px;
   background: linear-gradient(to bottom, #ffffff, rgba(51, 167, 130, 0));
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   z-index: -1;

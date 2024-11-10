@@ -7,76 +7,158 @@
     <title>layout_hamster</title>
   </head>
   <body class="body">
-    <main class="main">
-      <section class="top">
-        <div class="top_balance">
-          <div class="top_balance__left">
-            <img
-              src="./src//images/cryptocurrency-color_usdt.svg"
-              alt="usdt.svg"
-            />
-            <div>
-              <span>Баланс</span>
-              <p>100 USDT</p>
-            </div>
-          </div>
-          <div class="top_balance__right">
-            <button>
-              <img src="./src//images/ph_hand-withdraw.svg" alt="svg" />
-              <span>Пополнить</span>
-            </button>
-            <button>
-              <img src="./src//images/ph_hand-withdraw (1).svg" alt="svg" />
-              <span>Вывести</span>
-            </button>
-          </div>
-        </div>
-        <div class="top_extraction">
-          <div class="top_extraction__left">
-            <img src="./src/images/DTM.svg" alt="" />
-            <div class="top_extraction__left-data">
-              <span>Хомяк добывает за 1 сек</span>
+    <div id="pageHome" class="pageHome page">
+      <main class="main">
+        <section class="top">
+          <div class="top_balance">
+            <div class="top_balance__left">
+              <img
+                src="./src//images/cryptocurrency-color_usdt.svg"
+                alt="usdt.svg"
+              />
               <div>
-                <p>0.01 DTM</p>
-                <button id="topExtractionStoryBtn">История</button>
+                <span>Баланс</span>
+                <p>100 USDT</p>
               </div>
             </div>
+            <div class="top_balance__right">
+              <button>
+                <img src="./src//images/ph_hand-withdraw.svg" alt="svg" />
+                <span>Пополнить</span>
+              </button>
+              <button>
+                <img src="./src//images/ph_hand-withdraw (1).svg" alt="svg" />
+                <span>Вывести</span>
+              </button>
+            </div>
           </div>
-          <button class="top_extraction__right-btn">
-            <img src="./src/images/hamster_top.svg" alt="" />
-            <span>БУСТ ХОМЯКА</span>
+          <div class="top_extraction">
+            <div class="top_extraction__left">
+              <img src="./src/images/DTM.svg" alt="" />
+              <div class="top_extraction__left-data">
+                <span>Хомяк добывает за 1 сек</span>
+                <div>
+                  <p>0.01 DTM</p>
+                  <button id="topExtractionStoryBtn">История</button>
+                </div>
+              </div>
+            </div>
+            <button class="top_extraction__right-btn">
+              <img src="./src/images/hamster_top.svg" alt="" />
+              <span>БУСТ ХОМЯКА</span>
+            </button>
+          </div>
+        </section>
+        <section class="center">
+          <button id="centerHamsterGot" class="center_hamster-got">
+            <img src="./src/images/DM_gold.svg" alt="" />
+            <div>
+              <span>Хомяк добыл</span>
+              <p>100.02 DTM</p>
+            </div>
           </button>
-        </div>
-      </section>
-      <section class="center">
-        <button id="centerHamsterGot" class="center_hamster-got">
-          <img src="./src/images/DM_gold.svg" alt="" />
-          <div>
-            <span>Хомяк добыл</span>
-            <p>100.02 DTM</p>
-          </div>
-        </button>
-        <div class="hamster-circle">
-          <canvas id="circleBar" class="circleBar"></canvas>
-          <img src="./src/images/hamster_000001.svg" alt="" />
+          <div class="hamster-circle">
+            <canvas id="circleBar" class="circleBar"></canvas>
+            <img src="./src/images/hamster_000001.svg" alt="" />
 
-          <div class="center_remarks">
-            <img src="./src/images/from_topp_left.svg" alt="" />
-            Не тапай меня <br />
-            Пожалуйста!
+            <div class="center_remarks">
+              <img src="./src/images/from_topp_left.svg" alt="" />
+              Не тапай меня <br />
+              Пожалуйста!
+            </div>
           </div>
-        </div>
-        <div class="center_hamster-sleep">
-          <div class="hamster-sleep_content">
-            <span>Хомяк уснёт через: </span>
-            <p id="countdown"></p>
+          <div class="center_hamster-sleep">
+            <div class="hamster-sleep_content">
+              <span>Хомяк уснёт через: </span>
+              <p id="countdown"></p>
+            </div>
+            <button class="add-inform" id="addInformBtn">
+              <img src="./src/images/notification.svg" alt="" />
+            </button>
           </div>
-          <button class="add-inform" id="addInformBtn">
-            <img src="./src/images/notification.svg" alt="" />
+        </section>
+      </main>
+    </div>
+
+    <!-- todo page settings start ++++++++++++++++++++ -->
+    <div id="pageSettings" class="pageSettings page hiden">
+      <main in class="main">
+        <section class="settings_main settings-section">
+          <h2>Настройки</h2>
+          <button id="settings_main__language">
+            <div class="left">
+              <img
+                class="icon"
+                src="./src/images/tabler_language.svg"
+                alt="Icon 1"
+              />
+              <p class="text">Выбор языка</p>
+            </div>
+            <div class="right">
+              <span class="text">Русский ></span>
+            </div>
           </button>
-        </div>
-      </section>
-    </main>
+          <button id="settings_main__theme">
+            <div class="left">
+              <img
+                class="icon"
+                src="./src/images/tabler_sun-moon.svg"
+                alt="Icon 1"
+              />
+              <p class="text">Сменить тему</p>
+            </div>
+            <div class="right">
+              <span class="text">Тёмная ></span>
+            </div>
+          </button>
+          <button id="settings_main__wallet-address">
+            <div class="left">
+              <img
+                class="icon"
+                src="./src/images/solar_wallet-outline.svg"
+                alt="Icon 1"
+              />
+              <p class="text">Адрес USDT кошелька</p>
+            </div>
+            <!-- <div class="right">
+              <span class="text"></span>
+              <img class="icon" src="path/to/icon2.png" alt="Icon 2" />
+            </div> -->
+          </button>
+          <button id="settings_main__contacts">
+            <div class="left">
+              <img
+                class="icon"
+                src="./src/images/fluent_book-contacts-28-regular.svg"
+                alt="Icon 1"
+              />
+              <p class="text">Контакты</p>
+            </div>
+            <!-- <div class="right">
+              <span class="text"></span>
+              <img class="icon" src="path/to/icon2.png" alt="Icon 2" />
+            </div> -->
+          </button>
+        </section>
+        <section class="settings_language settings-section">
+          <h2>Выбор языка</h2>
+          <button class="settings_back-main-btn">Назад</button>
+        </section>
+        <section class="settings_theme settings-section">
+          <h2>Сменить тему</h2>
+          <button class="settings_back-main-btn">Назад</button>
+        </section>
+        <section class="settings_wallet-address settings-section">
+          <h2>Адрес USDT кошелька</h2>
+          <button class="settings_back-main-btn">Назад</button>
+        </section>
+        <section class="settings_contacts settings-section">
+          <h2>Контакты</h2>
+          <button class="settings_back-main-btn">Назад</button>
+        </section>
+      </main>
+    </div>
+    <!-- todo page settings end ++++++++++++++++++++++ -->
 
     <footer class="footer">
       <input type="radio" name="menu" id="home" checked hidden />
@@ -191,14 +273,13 @@
             </div>
             <br />
             <div class="topExtractionStory_content hiddenDiv">
-                <br>
+              <br />
               <table id="StoryContentAccruals">
                 <tr>
-                  <th>B USDT</td>
+                  <th>B USDT</th>
                   <th>Добыто DTM</th>
                   <th>B USDT</th>
                 </tr>
-               
               </table>
 
               <div class="topExtractionStory_total">
@@ -217,14 +298,13 @@
               </div>
             </div>
             <div class="topExtractionStory_content hiddenDiv">
-                <br>
-              <table id="StoryContentBoosts" >
+              <br />
+              <table id="StoryContentBoosts">
                 <tr>
                   <th>Дата</th>
                   <th>Наняли хомяка</th>
                   <th>До ухода хомяка</th>
                 </tr>
-                
               </table>
               <div class="topExtractionStory_total">
                 <button id="CurrentBalance">
@@ -251,5 +331,6 @@
     <script src="./src/js/countdown.js" type="module"></script>
     <script src="./src/js/popup.js" type="module"></script>
     <script src="./src/js/footerMenuBtn.js" type="module"></script>
+    <script src="./src/js/pageSettings.js" type="module"></script>
   </body>
 </html>

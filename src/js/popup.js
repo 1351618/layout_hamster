@@ -95,7 +95,6 @@ function renderPopupContent(popapData) {
     function centerHamsterGotInput() {
       const inputElement = document.querySelector("#amount");
       const inputValue = inputElement.value;
-      console.log(inputValue);
       document.getElementById("inputResult").textContent = inputValue;
     }
 
@@ -185,7 +184,6 @@ function renderPopupContent(popapData) {
     topExtractionStoryTabsBtn.forEach((button, index) => {
       button.addEventListener("click", () => {
         currentIndex = index; // Присваиваем индекс нажатой кнопки
-        console.log(currentIndex); // Логируем текущий индекс
 
         // Убираем класс 'active' у всех кнопок и добавляем нажатой
         topExtractionStoryTabsBtn.forEach((btn) =>

@@ -38,24 +38,24 @@
               <span>Хомяк добывает за 1 сек</span>
               <div>
                 <p>0.01 DTM</p>
-                <button>История</button>
+                <button id="topExtractionStoryBtn">История</button>
               </div>
             </div>
           </div>
           <button class="top_extraction__right-btn">
-            <img src="./src//images/hamster_top.svg" alt="" />
+            <img src="./src/images/hamster_top.svg" alt="" />
             <span>БУСТ ХОМЯКА</span>
           </button>
         </div>
       </section>
       <section class="center">
-        <div class="center_hamster-got">
-          <img src="./src//images/DM_gold.svg" alt="" />
+        <button id="centerHamsterGot" class="center_hamster-got">
+          <img src="./src/images/DM_gold.svg" alt="" />
           <div>
             <span>Хомяк добыл</span>
             <p>100.02 DTM</p>
           </div>
-        </div>
+        </button>
         <div class="hamster-circle">
           <canvas id="circleBar" class="circleBar"></canvas>
           <img src="./src/images/hamster_000001.svg" alt="" />
@@ -76,28 +76,6 @@
           </button>
         </div>
       </section>
-      <div class="popup">
-        <div class="popup_content">
-          <hr />
-          <img src="./src/images/notification.svg" alt="" />
-
-          <p>
-            Ваш хомяк работает ровно 24 часа, после чего он уснёт. Чтобы
-            разбудить его и включить в работу на 24 часа, надо нажать на него.
-            <br />
-            <br />
-            Вы можете нажимать по хомяку в любое время.Счётчик обновится.
-            <!-- <b>DOP TEXT</b> -->
-          </p>
-          <!-- <div class="popup_content__input"><input type="text" /></div> -->
-
-          <button id="popupNotActive">
-            <img src="./src//images/check_mark.svg" alt="" /><span
-              >Понятно</span
-            >
-          </button>
-        </div>
-      </div>
     </main>
 
     <footer class="footer">
@@ -128,7 +106,146 @@
         <p>Настройки</p>
       </label>
     </footer>
-   </div>
+
+    <section class="section-popup">
+      <div class="popup">
+        <div class="popup_content">
+          <!-- addInform start -->
+          <div class="addInform popup_content-div not-active">
+            <hr />
+            <br />
+            <img src="./src/images/notification.svg" alt="" />
+            <br />
+            <p>
+              Ваш хомяк работает ровно 24 часа, после чего он уснёт. Чтобы
+              разбудить его и включить в работу на 24 часа, надо нажать на него.
+              <br /><br />
+              Вы можете нажимать по хомяку <br />
+              в любое время. <br />Счётчик обновится.
+            </p>
+            <br />
+            <button class="popupNotActive">
+              <img src="./src/images/check_mark.svg" alt="" />
+              <span>Понятно</span>
+            </button>
+          </div>
+          <!-- addInform end -->
+
+          <!--  centerHamsterGot start -->
+          <div class="centerHamsterGot popup_content-div not-active">
+            <hr />
+            <br />
+            <img src="./src/images/DTM_T.svg" alt="" />
+            <br />
+            <div class="centerHamsterGot_content hiddenDiv hiden">
+              <h2>
+                Вы хотите продать DTM <br />
+                по официальному курсу <br />
+                0.0002 USDT за 1 DTM.
+              </h2>
+
+              <p>Если вы дождётесь запуска биржи, то сможете продать дороже</p>
+              <div class="popup_content__input-sect">
+                <label for="amount">Введите сумму DTM:</label>
+                <div class="popup_content__input">
+                  <input
+                    type="number"
+                    id="amount"
+                    name="amount"
+                    value="1000"
+                    min="0"
+                  />
+                </div>
+              </div>
+              <span>Вы получите: <b>2 USDT</b> на свой баланс</span>
+              <br />
+              <button class="popupNext">
+                <img src="./src/images/DM_gold.svg" alt="" />
+                <span>Продать DTM</span>
+              </button>
+            </div>
+            <div class="centerHamsterGot_content hiddenDiv hiden">
+              <h2>Ваши <span id="inputResult"></span> DTM проданы.</h2>
+
+              <p>
+                Сумма в размере 2 USDT<br />
+                зачислена на ваш баланс
+              </p>
+
+              <br />
+              <button class="popupNotActive">
+                <img src="./src/images/check_mark.svg" alt="" />
+                <span>Понятно</span>
+              </button>
+            </div>
+          </div>
+          <!--  centerHamsterGot end -->
+
+          <!--  topExtractionStory start -->
+          <div class="topExtractionStory popup_content-div not-active">
+            <hr />
+            <br />
+            <div class="topExtractionStory_tabs">
+              <button>Начисления</button>
+              <button>Бусты хомяка</button>
+            </div>
+            <br />
+            <div class="topExtractionStory_content hiddenDiv">
+                <br>
+              <table id="StoryContentAccruals">
+                <tr>
+                  <th>B USDT</td>
+                  <th>Добыто DTM</th>
+                  <th>B USDT</th>
+                </tr>
+               
+              </table>
+
+              <div class="topExtractionStory_total">
+                <button id="CurrentBalance">
+                  <p>8250 DTM</p>
+                  <span>Текущий баланс</span>
+                </button>
+                <button id="TotalMined">
+                  <p>12250 DTM</p>
+                  <span>Всего добыто</span>
+                </button>
+                <button id="CurrentBalance">
+                  <p>1.65 USDT</p>
+                  <span>Заработано</span>
+                </button>
+              </div>
+            </div>
+            <div class="topExtractionStory_content hiddenDiv">
+                <br>
+              <table id="StoryContentBoosts" >
+                <tr>
+                  <th>Дата</th>
+                  <th>Наняли хомяка</th>
+                  <th>До ухода хомяка</th>
+                </tr>
+                
+              </table>
+              <div class="topExtractionStory_total">
+                <button id="CurrentBalance">
+                  <p>330 USDT</p>
+                  <span>Ваши затраты</span>
+                </button>
+                <button id="TotalMined">
+                  <p>100 DTM</p>
+                  <span>Всего добыто</span>
+                </button>
+                <button id="CurrentBalance">
+                  <p>5 USDT</p>
+                  <span>Заработано</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!--  topExtractionStory end -->
+        </div>
+      </div>
+    </section>
 
     <script src="./src/js/circleBar.js" type="module"></script>
     <script src="./src/js/countdown.js" type="module"></script>

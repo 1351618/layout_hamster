@@ -1,38 +1,40 @@
+const popupSection = document.querySelector(".section-popup");
 const popupDiv = document.querySelector(".popup");
 const popupContentDiv = document.querySelector(".popup_content");
+
 const addInformBtn = document.getElementById("addInformBtn");
+const centerHamsterGotBtn = document.getElementById("centerHamsterGot");
+const topExtractionStoryBtn = document.getElementById("topExtractionStoryBtn");
+const popupNotActiveBtn = document.querySelectorAll(".popupNotActive");
+const popupNextBtn = document.querySelectorAll(".popupNext");
+const hiddenDiv = document.querySelectorAll(".hiddenDiv");
 
-/**
- * Индекс текущего элемента в массиве
- */
-let currentIndex = 0;
-
-// Данные для отображения, в последнем не должно быть кнопри для отрисовки следующего
-const popapData = [
-  {
-    popapCont:
-      "<hr/><img src='./src/images/notification.svg' alt='' /><p>Ваш хомяк работает ровно 24 часа, после чего он уснёт. Чтобы разбудить его и включить в работу на 24 часа, надо нажать на него. <br/><br/> Вы можете нажимать по хомяку в любое время.Счётчик обновится. <!-- <b>DOP TEXT</b> --> </p>",
-    nextBtn:
-      "<button id='popupNotActive'><img src='./src//images/check_mark.svg' alt='' /><span>Понятно</span></button>",
-  },
-  {
-    popapCont:
-      "<hr/><img src='./src/images/DTM_T.svg' alt='' /><h2>Вы хотите продать DTM <br/> по официальному курсу <br/> 0.0002 USDT за 1 DTM.</h2> <br/><br/><p>Если вы дождётесь запуска биржи, то сможете продать дороже</p><br/><p>Вы получите: <b>2 USDT</b> на свой баланс</p>",
-    nextBtn:
-      "<button id='popupNotActive'><img src='./src//images/DM_gold.svg' alt='' /><span>Продать DTM</span></button>",
-  },
-  {
-    popapCont:
-      "<hr/><img src='./src/images/DTM_T.svg' alt='' /><h2>Ваши 10000 DTM проданы.</h2> <br/><p>Сумма в размере 2 USDT <br/> зачислена на ваш баланс</p><br/><br/><br/><br/>",
-    nextBtn:
-      "<button id='popupNotActive'><img src='./src//images/check_mark.svg' alt='' /><span>Понятно</span></button>",
-  },
-];
+// <!-- данные для попаов -->
+const addInformBtnData = { namePopap: "addInform" };
+const centerHamsterGotBtnData = { namePopap: "centerHamsterGot" };
+const topExtractionStoryBtnData = {
+  namePopap: "topExtractionStory",
+  boosts: [
+    { date: "31.07.2024", dtm: "2500 DTM", usdt: "0.5 USDT" },
+    { date: "31.07.2024", dtm: "2250 DTM", usdt: "0.45 USDT" },
+    { date: "31.07.2024", dtm: "1500 DTM", usdt: "0.25 USDT" },
+    { date: "31.07.2024", dtm: "500 DTM", usdt: "0.15 USDT" },
+    { date: "31.07.2024", dtm: "1500 DTM", usdt: "0.35 USDT" },
+  ],
+  accruals: [
+    { date: "31.07.2024", hired: "100 USDT", timeLeft: "25 д. 23:54:13" },
+    { date: "31.07.2024", hired: "50 USDT", timeLeft: "21 д. 23:54:13" },
+    { date: "31.07.2024", hired: "90 USDT", timeLeft: "24 д. 23:54:13" },
+    { date: "31.07.2024", hired: "20 USDT", timeLeft: "12 д. 23:54:13" },
+    { date: "31.07.2024", hired: "50 USDT", timeLeft: "19 д. 23:54:13" },
+  ],
+};
 
 /**
  * Открытие попапа с добавлением класса "active"
  */
 function activePopupDiv() {
+  popupSection.classList.add("active");
   popupDiv.classList.add("active");
 }
 
@@ -40,44 +42,189 @@ function activePopupDiv() {
  * Закрытие попапа с удалением класса "active"
  */
 function notActivePopupDiv() {
+  // Снимаем активные классы для попапа
+  popupSection.classList.remove("active");
   popupDiv.classList.remove("active");
-  currentIndex = 0; // Сброс индекса для следующего показа
+  // Возвращаем класс not-active всем попапам, которые были активными
+  const popupDivs = popupContentDiv.querySelectorAll(".popup_content-div");
+  popupDivs.forEach((div) => {
+    div.classList.add("not-active");
+  });
+  hiddenDiv.forEach((div) => {
+    div.classList.add("hiden");
+  });
 }
 
 /**
- * Функция для отрисовки текущего элемента из массива `data`
+ * Функция для отрисовки текущего элемента из массива `content` внутри `popapData`
  */
-function renderPopupContent() {
-  // Очистим старое содержимое
-  popupContentDiv.innerHTML = "";
 
-  // Проверка на наличие следующего элемента
-  if (currentIndex < popapData.length) {
-    // Добавим содержимое текущего элемента из массива
-    const currentItem = popapData[currentIndex];
-    popupContentDiv.innerHTML = `${currentItem.popapCont}`;
+function renderPopupContent(popapData) {
+  // Проверка на наличие элемента с классом, который передан в popapData.namePopap
+  const targetDiv = popupContentDiv.querySelector(`.${popapData.namePopap}`);
 
-    // Проверяем наличие кнопки `nextBtn` в текущем элементе массива
-    const buttonHTML = currentItem.nextBtn
-      ? currentItem.nextBtn
-      : `<button id="popupNotActive"><img src="./src/images/check_mark.svg" alt="" /><span>Понятно</span></button>`;
-    popupContentDiv.innerHTML += buttonHTML;
+  // Если элемент не найден, закрываем попап
+  if (!targetDiv) {
+    console.error(`Элемент с классом .${popapData.namePopap} не найден.`);
+    notActivePopupDiv();
+    return;
+  }
+
+  // Проверка на наличие popapData
+  if (!popapData) {
+    notActivePopupDiv();
+    return;
+  }
+
+  // Если элемент найден, продолжаем отрисовку контента
+  targetDiv.classList.remove("not-active");
+
+  // <!-- addInform start -->
+  if (popapData.namePopap === "addInform") {
+    activePopupDiv();
+  }
+
+  // <!--  centerHamsterGot start -->
+  if (popapData.namePopap === "centerHamsterGot") {
+    activePopupDiv();
+    const contentBlocks = targetDiv.querySelectorAll(
+      ".centerHamsterGot_content"
+    );
+    let currentIndex = 0;
+
+    function centerHamsterGotInput() {
+      const inputElement = document.querySelector("#amount");
+      const inputValue = inputElement.value;
+      console.log(inputValue);
+      document.getElementById("inputResult").textContent = inputValue;
+    }
+
+    // Функция для отображения только одного блока по текущему индексу
+    function showContentBlock(index) {
+      contentBlocks.forEach((block, idx) => {
+        block.classList.toggle("hiden", idx !== index);
+      });
+    }
+    showContentBlock(currentIndex);
+    // Находим кнопку "Продать DTM" и добавляем обработчик клика
+    const nextButton = targetDiv.querySelector(".popupNext");
+    nextButton.addEventListener("click", () => {
+      if (currentIndex < contentBlocks.length - 1) {
+        currentIndex++;
+        centerHamsterGotInput();
+        showContentBlock(currentIndex);
+      }
+    });
+  }
+
+  // <!--  topExtractionStory start -->
+  if (popapData.namePopap === "topExtractionStory") {
     activePopupDiv();
 
-    // Привязка обработчика к кнопке
-    const popupNotActiveBtn = document.getElementById("popupNotActive");
-    popupNotActiveBtn.addEventListener("click", () => {
-      currentIndex++; // Увеличиваем индекс для следующего элемента
-      renderPopupContent(); // Рекурсивно вызываем отрисовку следующего элемента
+    const tableBoosts = document.getElementById("StoryContentAccruals");
+
+    // Удаляем все строки, кроме заголовка (первой строки)
+    tableBoosts
+      .querySelectorAll("tr:not(:first-child)")
+      .forEach((row) => row.remove());
+
+    // Добавляем новые строки из данных
+    popapData.boosts.forEach((boost) => {
+      const newRow = document.createElement("tr");
+      newRow.innerHTML = `
+        <td>${boost.date}</td>
+        <td>${boost.dtm}</td>
+        <td>${boost.usdt}</td>
+      `;
+      // Добавляем новую строку к таблице
+      tableBoosts.appendChild(newRow);
     });
-  } else {
-    notActivePopupDiv(); // Если элементов больше нет, закрываем попап
+
+    const tableAccruals = document.getElementById("StoryContentBoosts");
+
+    // Удаляем все строки, кроме заголовка (первой строки)
+    tableAccruals
+      .querySelectorAll("tr:not(:first-child)")
+      .forEach((row) => row.remove());
+
+    // Добавляем новые строки из данных
+    popapData.accruals.forEach((boost) => {
+      const newRow = document.createElement("tr");
+      newRow.innerHTML = `
+        <td>${boost.date}</td>
+        <td>${boost.hired}</td>
+        <td>${boost.timeLeft}</td>
+      `;
+      // Добавляем новую строку в таблицу
+      tableAccruals.appendChild(newRow);
+    });
+
+    // Переменная для отслеживания текущего индекса
+    let currentIndex = 0;
+
+    const topExtractionStoryTabsBtn = targetDiv
+      .querySelector(".topExtractionStory_tabs")
+      .querySelectorAll("button");
+
+    const contentBlocks = targetDiv.querySelectorAll(
+      ".topExtractionStory_content"
+    );
+    topExtractionStoryTabsBtn[0].classList.add("active");
+
+    // Функция для обновления видимости блоков в зависимости от currentIndex
+    function updateContentVisibility() {
+      contentBlocks.forEach((block, idx) => {
+        block.classList.toggle("hiden", idx !== currentIndex); // Скрываем все, кроме текущего
+      });
+    }
+
+    // Инициализация отображения контента
+    updateContentVisibility();
+
+    // Обработчик клика по кнопкам
+    topExtractionStoryTabsBtn.forEach((button, index) => {
+      button.addEventListener("click", () => {
+        currentIndex = index; // Присваиваем индекс нажатой кнопки
+        console.log(currentIndex); // Логируем текущий индекс
+
+        // Убираем класс 'active' у всех кнопок и добавляем нажатой
+        topExtractionStoryTabsBtn.forEach((btn) =>
+          btn.classList.remove("active")
+        );
+        button.classList.add("active");
+
+        // Обновляем видимость блоков
+        updateContentVisibility();
+      });
+    });
   }
 }
 
-/**
- * Обработчик кнопки дополнительной информации
- */
+// Обработчик кнопкок
 addInformBtn.addEventListener("click", () => {
-  renderPopupContent(); // Запускаем отрисовку первого элемента
+  renderPopupContent(addInformBtnData);
+});
+
+centerHamsterGotBtn.addEventListener("click", () => {
+  renderPopupContent(centerHamsterGotBtnData);
+});
+
+topExtractionStoryBtn.addEventListener("click", () => {
+  renderPopupContent(topExtractionStoryBtnData);
+});
+
+popupNotActiveBtn.forEach((button) => {
+  button.addEventListener("click", () => {
+    notActivePopupDiv(); // Ваш код для закрытия попапа
+  });
+});
+
+popupSection.addEventListener("click", (event) => {
+  if (event.target === popupSection) {
+    notActivePopupDiv();
+  }
+});
+
+popupDiv.addEventListener("click", (event) => {
+  event.stopPropagation();
 });

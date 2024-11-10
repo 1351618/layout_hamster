@@ -56,6 +56,10 @@ input {
 .BRG {
   border: 2px solid #3cff00;
 }
+
+.hiden {
+  display: none !important;
+}
 html {
   background-color: #110315;
   display: flex;
@@ -481,6 +485,20 @@ main {
   }
 }
 
+// todo popup start ======================
+.section-popup {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -1;
+  &.active {
+    z-index: 999;
+  }
+}
+
 .popup {
   transform: translateY(108%);
   margin: 0px 10px;
@@ -592,6 +610,12 @@ main {
   }
 }
 
+.popup_content__input-sect {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
 .popup_content__input {
   width: 150px;
   height: 40px;
@@ -624,8 +648,109 @@ main {
     color: #fff;
     border: none;
   }
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Скрыть стрелочки в Firefox */
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
 }
 
+.not-active {
+  display: none !important;
+}
+
+.popup_content-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.centerHamsterGot_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.topExtractionStory_tabs {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  button {
+    height: 46px;
+    background: #ffffff1f;
+    &.active {
+      background: #432473;
+    }
+  }
+}
+.topExtractionStory_content {
+  width: 100%;
+  table {
+    width: 100%;
+    height: 200px;
+
+    display: block;
+    overflow-y: auto;
+    border-collapse: collapse;
+
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #432473;
+      border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #ab9cff4b;
+      border-radius: 4px;
+    }
+    th {
+      font-weight: bold;
+      padding: 5px;
+      text-align: start;
+    }
+
+    td {
+      padding: 5px;
+    }
+  }
+}
+
+.topExtractionStory_total {
+  width: 100%;
+  display: flex;
+  gap: 4px;
+
+  button {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    background: #52245ca1;
+
+    p {
+      font-size: 20px;
+      text-wrap: nowrap;
+    }
+    span {
+      font-size: 11px;
+      font-weight: unset;
+    }
+  }
+}
+
+// todo popup end ========================
+
+//todo footer start ======================
 .footer {
   position: absolute;
   left: 0;
@@ -687,3 +812,4 @@ main {
     }
   }
 }
+// todo footer end ======================

@@ -142,15 +142,97 @@
         </section>
         <section class="settings_language settings-section">
           <h2>Выбор языка</h2>
+          <button class="settings_language__btn active">
+            <img
+              src="./src/images/emojione_flag-for-russia.png"
+              alt=""
+            />Русский
+          </button>
+          <button class="settings_language__btn">
+            <img
+              src="./src/images/emojione_flag-england.png"
+              alt=""
+            />Английский
+          </button>
+          <button class="settings_language__btn">
+            <img
+              src="./src/images/emojione_flag-for-china.png"
+              alt=""
+            />Китайский
+          </button>
+          <button class="settings_language__btn">
+            <img
+              src="./src/images/emojione_flag-for-germany.png"
+              alt=""
+            />Немецкий
+          </button>
+          <br />
           <button class="settings_back-main-btn">Назад</button>
         </section>
         <section class="settings_theme settings-section">
           <h2>Сменить тему</h2>
+          <button class="settings_theme__btn active">
+            <img src="./src/images/si_sun-fill.png" alt="" />Тёмная
+          </button>
+          <button class="settings_theme__btn">
+            <img src="./src/images/tabler_moon-filled.png" alt="" />Светлая
+          </button>
+          <br />
           <button class="settings_back-main-btn">Назад</button>
         </section>
-        <section class="settings_wallet-address settings-section">
-          <h2>Адрес USDT кошелька</h2>
-          <button class="settings_back-main-btn">Назад</button>
+        <section class="settings_wallet-address settings-section scroll">
+          <div class="settings_wallet-address_wrapper">
+            <span class="BFS"
+              >Вы можете сохранить свой адрес USDT в настройках своего аккаунта.
+              <br />
+              <br />
+              Когда вы будете выводить средства, ваш адрес автоматически будет
+              прописан в строке вывода.</span
+            >
+            <p>USDT TON</p>
+            <div class="BFS settings_wallet-address_div-input">
+              <input type="text" placeholder="Введите адрес кошелька" />
+            </div>
+            <button class="settings_wallet-address_save BFS">
+              <img src="./src/images/bi_save.png" alt="" />
+              Сохранить
+            </button>
+
+            <p>USDT BEP20</p>
+            <div class="BFS settings_wallet-address_div-input">
+              <input type="text" placeholder="Введите адрес кошелька" />
+            </div>
+            <button class="settings_wallet-address_save BFS">
+              <img src="./src/images/bi_save.png" alt="" />
+              Сохранить
+            </button>
+
+            <p>USDT TRC20</p>
+            <div class="BFS settings_wallet-address_div-input">
+              <input type="text" placeholder="Введите адрес кошелька" />
+            </div>
+            <div class="settings_wallet-address_save-delit">
+              <button class="settings_wallet-address_save BFS">
+                <img src="./src/images/bi_save.png" alt="" />
+                Сохранить
+              </button>
+              <button class="settings_wallet-address_delit BFS">
+                <img src="./src/images/del.png" alt="" />
+                Удалить
+              </button>
+            </div>
+            <p>USDT Polygon</p>
+            <div class="BFS settings_wallet-address_div-input">
+              <input type="text" placeholder="Введите адрес кошелька" />
+            </div>
+            <button class="settings_wallet-address_save BFS">
+              <img src="./src/images/bi_save.png" alt="" />
+              Сохранить
+            </button>
+            <br />
+
+            <button class="settings_back-main-btn">Назад</button>
+          </div>
         </section>
         <section class="settings_contacts settings-section">
           <h2>Контакты</h2>
@@ -274,7 +356,7 @@
             <br />
             <div class="topExtractionStory_content hiddenDiv">
               <br />
-              <table id="StoryContentAccruals">
+              <table id="StoryContentAccruals" class="scroll">
                 <tr>
                   <th>B USDT</th>
                   <th>Добыто DTM</th>
@@ -299,7 +381,7 @@
             </div>
             <div class="topExtractionStory_content hiddenDiv">
               <br />
-              <table id="StoryContentBoosts">
+              <table id="StoryContentBoosts" class="scroll">
                 <tr>
                   <th>Дата</th>
                   <th>Наняли хомяка</th>

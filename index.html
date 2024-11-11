@@ -88,7 +88,10 @@
     <!-- todo page partners start ++++++++++++++++++++ -->
     <div id="pagePartners" class="pagePartners page hiden">
       <main class="main">
-        <section class="partners-partners partners-section">
+        <section
+          id="partners-partners"
+          class="partners-partners partners-section"
+        >
           <div class="partners_level-percentage BFS">
             <button class="BFS">
               <p>1 уровень</p>
@@ -228,10 +231,23 @@
           </div>
           <button class="partners_friends-list BFS">Список друзей</button>
         </section>
-        <section class="partners-friends partners-section">
+        <section
+          id="partners-friends"
+          class="partners-friends partners-section"
+        >
+          <div class="partners-friends_find-friends">
+            <div class="find-friends_input">
+              <div class="find-friends_input__div BFS">
+                <input type="text" placeholder="Логин" />
+              </div>
+              <div class="find-friends_input__div BFS">
+                <input type="text" placeholder="Имя" />
+              </div>
+            </div>
+            <button class="BFS"><img src="" alt="" />Найти друга</button>
+          </div>
           <div></div>
-          <div></div>
-          <button></button>
+          <button class="partners_back-main-section BFS">назад</button>
         </section>
       </main>
     </div>
@@ -570,5 +586,6 @@
     <script src="./src/js/popup.js" type="module"></script>
     <script src="./src/js/footerMenuBtn.js" type="module"></script>
     <script src="./src/js/pageSettings.js" type="module"></script>
+    <script src="./src/js/pagePartners.js" type="module"></script>
   </body>
 </html>

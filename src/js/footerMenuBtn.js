@@ -1,19 +1,24 @@
 const pageClassAll = document.querySelectorAll(".page");
-const pageHome_div = document.querySelector(".pageHome");
-const pageSettings_div = document.querySelector(".pageSettings");
+const pages = {
+  0: document.querySelector(".pageHome"),
+  1: document.querySelector(".pageTasks"),
+  2: document.querySelector(".pagePartners"),
+  4: document.querySelector(".pageSettings"),
+};
 
 let activePage;
 let indexPage;
 
 document.addEventListener("DOMContentLoaded", () => {
-  const firstButton = document.querySelector(".menu-button");
-  activePage = firstButton.querySelector("p").textContent;
+  const menuButtons = document.querySelectorAll(".menu-button");
+  const firstButton = menuButtons[0];
 
+  activePage = firstButton.querySelector("p").textContent;
   indexPage = 0;
   firstButton.classList.add("active");
   pageRendering();
 
-  document.querySelectorAll(".menu-button").forEach((button, index) => {
+  menuButtons.forEach((button, index) => {
     button.addEventListener("click", () => {
       activePage = button.querySelector("p").textContent;
       indexPage = index;
@@ -23,10 +28,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function menuButtonActive() {
-  document
-    .querySelectorAll(".menu-button")
-    .forEach((btn) => btn.classList.remove("active"));
-  document.querySelectorAll(".menu-button")[indexPage].classList.add("active");
+  const menuButtons = document.querySelectorAll(".menu-button");
+  menuButtons.forEach((btn) => btn.classList.remove("active"));
+  menuButtons[indexPage].classList.add("active");
 }
 
 function HidenAllPage() {
@@ -35,18 +39,11 @@ function HidenAllPage() {
   });
 }
 
-function pageHome() {
-  console.log("pageHome");
-  pageHome_div.classList.remove("hiden");
-}
-function pageSettings() {
-  console.log("pageSettings");
-  pageSettings_div.classList.remove("hiden");
-}
-
 function pageRendering() {
   menuButtonActive();
   HidenAllPage();
-  if (indexPage === 0) pageHome();
-  if (indexPage === 4) pageSettings();
+  if (pages[indexPage]) {
+    pages[indexPage].classList.remove("hiden");
+    console.log(`Rendering page: ${indexPage}`);
+  }
 }

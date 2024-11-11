@@ -763,6 +763,110 @@ main {
   font-weight: unset;
 }
 
+.partners-partners {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  gap: 12px;
+  padding-bottom: 20px;
+}
+
+.partners_level-percentage {
+  height: 59px;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  gap: 8px;
+}
+.partners_level-percentage button {
+  width: 100%;
+  background: linear-gradient(to bottom, rgba(91, 19, 120, 0.3764705882), rgba(91, 19, 120, 0.3764705882));
+}
+.partners_level-percentage button::before {
+  background: linear-gradient(to right, #7900a8, rgba(51, 167, 130, 0));
+}
+.partners_level-percentage button p {
+  font-size: 12px;
+}
+.partners_level-percentage button b {
+  font-size: 20px;
+}
+
+.levels_level {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.levels_level::before {
+  background: linear-gradient(to right, #95a800, rgba(51, 167, 130, 0));
+}
+
+.levels_level__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 6px;
+}
+.levels_level__title p {
+  font-size: 24px;
+}
+.levels_level__title span {
+  font-size: 16px;
+}
+
+.levels_level__cont {
+  display: flex;
+  justify-content: space-between;
+  gap: 20%;
+}
+
+.levels_level__cont-text {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.levels_level__cont-text p {
+  font-size: 14px;
+}
+.levels_level__cont-text img {
+  height: 24px;
+}
+
+.partners_invite-friends {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+}
+.partners_invite-friends button {
+  background-color: #fff;
+  color: #000;
+  height: 36px;
+  border-radius: var(--borderRadius);
+  padding: 0 10px;
+  min-width: 36px;
+}
+
+.partners_friends-list {
+  height: 36px;
+}
+.partners_friends-list::before {
+  background: linear-gradient(to right, #ffffff, #673ab7);
+}
+
+.partners_description {
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 0.9;
+  background: linear-gradient(to bottom, rgba(91, 19, 120, 0.3764705882), rgba(91, 19, 120, 0.3764705882));
+}
+.partners_description::before {
+  background: linear-gradient(to right, #7900a8, rgba(51, 167, 130, 0));
+}
+
 .settings-section {
   display: flex;
   flex-direction: column;

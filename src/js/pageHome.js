@@ -6,6 +6,8 @@ const balanceWithdraw_Btn = document.querySelector(
   ".top_balance__right-withdraw"
 );
 
+const backHome_Btn = document.getElementById("home_btn");
+
 const centerTopBlock = {
   centrExtraction: document.querySelector(".centr_extraction"),
   centrWell: document.querySelector(".centr-well"),
@@ -110,6 +112,13 @@ centerTopBlock["hireHamster_btn"].addEventListener("click", () => {
   topBlockActive = "home";
   hamsterImgShow();
   colorAssignment();
+  centerTopBlockShow();
+});
+
+backHome_Btn.addEventListener("click", () => {
+  console.log("home home btn");
+  topBlockActive = "home";
+  hamsterImgShow();
   centerTopBlockShow();
 });
 

@@ -13,6 +13,8 @@
 :root {
   --textColot: #fff;
   --borderRadius: 15px;
+  --purColor: #201338;
+  --blCoor: #0a2744;
 }
 
 * {
@@ -92,6 +94,8 @@ input {
 
 .scroll {
   overflow-y: auto;
+  height: 100%;
+
   &::-webkit-scrollbar {
     width: 8px;
   }
@@ -104,6 +108,37 @@ input {
   &::-webkit-scrollbar-track {
     background: #ab9cff1f;
     border-radius: 4px;
+  }
+}
+
+.div-input {
+  width: 150px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--purColor), var(--purColor));
+  input {
+    height: 100%;
+    width: 100%;
+    padding: 0 10px;
+    background-color: unset;
+    font-size: 24px;
+    color: #fff;
+    border: none;
+  }
+}
+
+.btnA {
+}
+.btnB {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 75px;
+  font-size: 18px;
+  font-weight: bold;
+  background: linear-gradient(to bottom, #0e2b47, #0e2b47);
+  &::before {
+    background: linear-gradient(to right, #0e7fb8, #33a78200);
   }
 }
 
@@ -591,6 +626,138 @@ main {
   border-bottom: 1px solid #fff;
 }
 
+.replenish,
+.withdraw {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 1%;
+  padding: 10px 0 20px;
+}
+
+.replenish_list-crypto,
+.withdraw_list-crypto {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1%;
+  button {
+    height: 36px;
+    width: 100%;
+    border-radius: var(--borderRadius);
+    background-color: #3e3d45;
+    &::before {
+      background: unset;
+    }
+    &.active {
+      background: linear-gradient(
+        to bottom,
+        rgba(91, 19, 120, 0.3764705882),
+        rgba(91, 19, 120, 0.3764705882)
+      );
+      &::before {
+        background: linear-gradient(to right, #ffffff, rgba(51, 167, 130, 0));
+      }
+    }
+  }
+}
+
+.replenish_content,
+.withdraw_content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  span {
+    padding: 10px;
+  }
+}
+
+.withdraw_content-summ-inp,
+.replenish_content-summ-inp {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  p {
+    width: 100%;
+    font-size: 24px;
+  }
+}
+
+.withdraw_content__add-option,
+.replenish_content__add-option {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 1%;
+  padding: 2% 1%;
+  button {
+    height: 53px;
+    font-size: 14px;
+    max-width: 300px;
+  }
+}
+
+.withdraw_content__key,
+.replenish_content__key {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 3%;
+  justify-content: space-between;
+  p {
+    font-size: 24px;
+    width: 100%;
+
+    padding: 0 3%;
+  }
+  button {
+    height: 36px;
+    width: 65px;
+    max-width: 300px;
+  }
+}
+
+.withdraw_div-input {
+  height: 56px;
+  margin: 11px;
+  width: 90%;
+}
+
+.withdraw_btn {
+  max-width: 300px;
+}
+
+.withdraw_content__story,
+.replenish_content__story {
+  width: 100%;
+  height: 100%;
+  margin: 10px 0 0 0;
+  & th {
+    text-align: center;
+    padding: 4px;
+    padding: 10px 0px;
+  }
+  & td {
+    text-align: center;
+    padding: 4px;
+  }
+}
+
+.withdraw_content__story-cont,
+.replenish_content__story-cont {
+  width: 100%;
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
 // todo popup start ======================
 .section-popup {
   position: absolute;
@@ -725,19 +892,6 @@ main {
 }
 
 .popup_content__input {
-  width: 150px;
-  height: 40px;
-  background: linear-gradient(to bottom, rgb(45, 34, 62), rgba(24, 24, 29, 0));
-
-  input {
-    height: 100%;
-    width: 100%;
-    padding: 0 10px;
-    background-color: unset;
-    font-size: 24px;
-    color: #fff;
-    border: none;
-  }
   input[type="number"]::-webkit-outer-spin-button,
   input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -787,18 +941,17 @@ main {
   table {
     width: 100%;
     height: 200px;
-
-    display: block;
     border-collapse: collapse;
 
     th {
       font-weight: bold;
       padding: 5px;
-      text-align: start;
+      text-align: center;
     }
 
     td {
       padding: 5px;
+      text-align: center;
     }
   }
 }
@@ -1117,35 +1270,6 @@ main {
 .settings_back-main-btn {
   width: 306px;
   height: 75px;
-  position: relative;
-  padding: 20px;
-  overflow: hidden;
-  background: linear-gradient(to bottom, #0e2b47, #0e2b47);
-  border-radius: var(--borderRadius);
-  z-index: 1;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0px 0px 20px rgba(84, 31, 165, 0.7019607843);
-  flex-direction: row;
-  font-size: 18px;
-  font-weight: bold;
-
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: var(--borderRadius);
-    padding: 1px;
-    background: linear-gradient(to right, #ffffff, #33a78200);
-    -webkit-mask: linear-gradient(#fff 0 0) content-box,
-      linear-gradient(#fff 0 0);
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    z-index: -1;
-  }
 }
 
 .settings_wallet-address {

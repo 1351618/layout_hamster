@@ -10,7 +10,7 @@
     <div id="pageHome" class="pageHome page">
       <main class="main">
         <section class="top">
-          <div class="top_balance">
+          <div class="top_balance BFS">
             <div class="top_balance__left">
               <img
                 src="./src//images/cryptocurrency-color_usdt.svg"
@@ -22,20 +22,22 @@
               </div>
             </div>
             <div class="top_balance__right">
-              <button>
+              <button class="top_balance__right-replenish">
                 <img src="./src//images/ph_hand-withdraw.svg" alt="svg" />
                 <span>Пополнить</span>
               </button>
-              <button>
+              <button class="top_balance__right-withdraw">
                 <img src="./src//images/ph_hand-withdraw (1).svg" alt="svg" />
                 <span>Вывести</span>
               </button>
             </div>
           </div>
-          <div class="top_extraction">
-            <div class="top_extraction__left">
+        </section>
+        <section class="center">
+          <div class="centr_extraction">
+            <div class="centr_extraction__left BFS">
               <img src="./src/images/DTM.svg" alt="" />
-              <div class="top_extraction__left-data">
+              <div class="centr_extraction__left-data">
                 <span>Хомяк добывает за 1 сек</span>
                 <div>
                   <p>0.01 DTM</p>
@@ -43,13 +45,43 @@
                 </div>
               </div>
             </div>
-            <button class="top_extraction__right-btn">
+            <button
+              id="centr-extraction-bust_Btn"
+              class="centr_extraction__right-btn"
+            >
               <img src="./src/images/hamster_top.svg" alt="" />
               <span>БУСТ ХОМЯКА</span>
             </button>
           </div>
-        </section>
-        <section class="center">
+
+          <!-- ========================== -->
+          <div class="centr-well BFS">
+            <img src="./src/images/DTM_T.svg" alt="" />
+            <div class="centr-well__data">
+              <span>Официальный курс</span>
+              <p>1 DTM = 100 USDT</p>
+            </div>
+            <button id="centr-well__know-Btn">
+              <!-- <img src="" alt="->" /> -->
+              <b>→</b>
+              <p>Узнать</p>
+            </button>
+          </div>
+
+          <div class="centr-boost-refill">
+            <div class="centr-boost-refill_input">
+              <p>Введите сумму:</p>
+              <div class="centr-boost-refill_input-input BFS">
+                <input type="text" placeholder="100" />
+              </div>
+            </div>
+            <p>
+              Ваш хомяк будет приносить <br />
+              <b>0.31 DTM в секунду</b> (26 784 DTM в день)
+            </p>
+          </div>
+
+          <!-- ============ -->
           <button id="centerHamsterGot" class="center_hamster-got">
             <img src="./src/images/DM_gold.svg" alt="" />
             <div>
@@ -58,8 +90,18 @@
             </div>
           </button>
           <div class="hamster-circle">
+            <span class="hamster-circle_inner-shadow"></span>
             <canvas id="circleBar" class="circleBar"></canvas>
-            <img src="./src/images/hamster_000001.svg" alt="" />
+            <img
+              src="./src/images/hamster_000001.svg"
+              alt=""
+              class="hamster-normal"
+            />
+            <img
+              src="./src/images/hamster_000002.png"
+              alt=""
+              class="hamster-bust"
+            />
 
             <div class="center_remarks">
               <img src="./src/images/from_topp_left.svg" alt="" />
@@ -76,7 +118,11 @@
               <img src="./src/images/notification.svg" alt="" />
             </button>
           </div>
+          <button class="hire-hamster-btn">НАНЯТЬ ХОМЯКА</button>
+          <button class="hire-hamster-terms-btn">Условия найма хомяка</button>
         </section>
+        <section class="replenish">replenish</section>
+        <section class="withdraw">withdraw</section>
       </main>
     </div>
 
@@ -235,7 +281,7 @@
           id="partners-friends"
           class="partners-friends partners-section"
         >
-          <div class="partners-friends_find-friends">
+          <div class="partners-friends_find-friends BFS">
             <div class="find-friends_input">
               <div class="find-friends_input__div BFS">
                 <input type="text" placeholder="Логин" />
@@ -246,7 +292,9 @@
             </div>
             <button class="BFS"><img src="" alt="" />Найти друга</button>
           </div>
-          <div></div>
+          <div class="h100 scroll">
+            <div class="partners-friends_friends-withdrawal"></div>
+          </div>
           <button class="partners_back-main-section BFS">назад</button>
         </section>
       </main>
@@ -433,7 +481,7 @@
         <img src="./src/images/Partners.svg" alt="" />
         <p>Партнеры</p>
       </label>
-      <label for="dtmex" class="menu-button">
+      <label for="dtmex" class="menu-button" style="display: none">
         <img src="./src/images/DTMEx.svg" alt="" />
         <p>DTMEx</p>
       </label>
@@ -483,7 +531,7 @@
               <p>Если вы дождётесь запуска биржи, то сможете продать дороже</p>
               <div class="popup_content__input-sect">
                 <label for="amount">Введите сумму DTM:</label>
-                <div class="popup_content__input">
+                <div class="popup_content__input BFS">
                   <input
                     type="number"
                     id="amount"
@@ -581,6 +629,7 @@
       </div>
     </section>
 
+    <script src="./src/js/pageHome.js" type="module"></script>
     <script src="./src/js/circleBar.js" type="module"></script>
     <script src="./src/js/countdown.js" type="module"></script>
     <script src="./src/js/popup.js" type="module"></script>

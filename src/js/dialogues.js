@@ -55,7 +55,7 @@ function startHamsterMessages() {
 
     // Увеличиваем индекс; если достигнут конец массива, сбрасываем на 0
     index = (index + 1) % hamsterTexts[typeHamster].phrases.length;
-  }, 1000);
+  }, 1500);
 }
 
 // Запуск функции

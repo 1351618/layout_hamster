@@ -492,7 +492,7 @@ main {
 
 .center_dialogues {
   position: absolute;
-  max-width: 35%;
+  max-width: 160px;
   z-index: 100;
   top: 53%;
   right: 14%;
@@ -504,9 +504,30 @@ main {
   text-align: center;
   line-height: 1.6;
 }
-.center_dialogues img {
-  z-index: -1;
-  transform: translate(-50px, -50px);
+@media (max-width: 440px) {
+  .center_dialogues {
+    font-size: 10px;
+    padding: 10px;
+    max-width: 100px;
+  }
+}
+.center_dialogues span {
+  position: relative;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+.center_dialogues span img {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-59%, -131%);
+  height: 33px;
+}
+@media (max-width: 440px) {
+  .center_dialogues span img {
+    height: 20px;
+  }
 }
 
 .center_hamster-got {

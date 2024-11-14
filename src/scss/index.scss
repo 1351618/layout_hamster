@@ -1,165 +1,50 @@
+@use "./reset_styles";
 @use "./root";
+@use "./templates";
+@use "./pages";
 @use "./footer";
+@use "./popups";
 
 @font-face {
-  font-family: "Inter";
+  font-family: "Inter-SemiBold";
   src: url("../fonts/Inter_18pt-SemiBold.ttf") format("truetype");
   font-weight: 600;
 }
 
 @font-face {
-  font-family: "Inter";
-  src: url("../fonts/Inter-VariableFont_opsz,wght.ttf") format("truetype");
+  font-family: "Inter-opsz";
+  src: url("../fonts/Inter-opsz.ttf") format("truetype");
   font-weight: 400;
 }
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@font-face {
+  font-family: "Inter-Regular-18";
+  src: url("../fonts/Inter_18pt-Thin.ttf") format("truetype");
+  font-weight: 400;
 }
-a {
-  text-decoration: none;
-  color: inherit;
-}
-ul,
-ol {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-h1,
-h2,
-h3 {
-  margin: 0;
+@font-face {
+  font-family: "Inter-Regular-24";
+  src: url("../fonts/Inter_18pt-Thin.ttf") format("truetype");
   font-weight: normal;
 }
-img {
-  object-fit: cover;
-}
+
 button {
-  border: none;
   color: var(--textColot);
-  background: unset;
 }
 input {
-  outline: none;
-  background-color: unset;
-  border: unset;
   color: var(--textColot);
-}
-
-.BRR {
-  border: 2px solid #ff0000;
-}
-.BRB {
-  border: 2px solid #001eff;
-}
-.BRG {
-  border: 2px solid #3cff00;
-}
-
-// Basic Frame Style
-.BFS {
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(to bottom, #0e2b4700, #0e2b4700);
-  border-radius: var(--borderRadius);
-  z-index: 1;
-  box-shadow: 0px 0px 20px #541fa5b3;
-
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: var(--borderRadius);
-    padding: 1px;
-    background: linear-gradient(to right, #ffffff, #33a78200);
-    -webkit-mask: linear-gradient(#fff 0 0) content-box,
-      linear-gradient(#fff 0 0);
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    z-index: -1;
-  }
-}
-
-.h100 {
-  height: 100%;
-}
-
-.scroll {
-  overflow-y: auto;
-  height: 100%;
-
-  &::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: #4424735d;
-    border-radius: 4px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background: #ab9cff1f;
-    border-radius: 4px;
-  }
-}
-
-.div-input {
-  width: 150px;
-  height: 40px;
-  background: linear-gradient(
-    to bottom,
-    var(--mainStyleDark),
-    var(--mainStyleDark)
-  );
-  &::before {
-    background: linear-gradient(to right, #ffffff, #8133a7);
-  }
-
-  input {
-    height: 100%;
-    width: 100%;
-    padding: 0 10px;
-    background-color: unset;
-    font-size: 24px;
-    color: #fff;
-    border: none;
-  }
-}
-
-.btnA {
-}
-.btnB {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 75px;
-  font-size: 18px;
-  font-weight: bold;
-  background: linear-gradient(to bottom, #0e2b47, #0e2b47);
-  &::before {
-    background: linear-gradient(to right, #0e7fb8, #33a78200);
-  }
-}
-
-.frame1 {
-  &::before {
-    background: linear-gradient(to right, #ffffff, #8133a7);
-  }
 }
 
 .hiden {
+  display: none !important;
+}
+.not-active {
   display: none !important;
 }
 html {
   background-color: var(--backgroundColor);
   flex-direction: column;
   align-items: center;
-  font-family: "Inter", sans-serif;
+  font-family: "Inter-opsz, Inter-Regular-24", sans-serif;
   display: flex;
   justify-content: center;
   min-height: 100%;
@@ -176,27 +61,27 @@ html {
   color: var(--textColot);
 }
 
-.page {
-  min-height: 100vh;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
+// .page {
+//   min-height: 100vh;
+//   height: 100%;
+//   width: 100%;
+//   display: flex;
+//   flex-direction: column;
+// }
 
-main {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  padding: 20px 20px 85px 20px;
-  position: relative;
-  flex-grow: 1;
-}
-.top {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
+// main {
+//   display: flex;
+//   flex-direction: column;
+//   height: 100%;
+//   padding: 20px 20px 85px 20px;
+//   position: relative;
+//   flex-grow: 1;
+// }
+// .top {
+//   display: flex;
+//   flex-direction: column;
+//   gap: 8px;
+// }
 .top_balance {
   height: auto;
   min-height: 75px;
@@ -452,7 +337,7 @@ main {
 }
 .hamster-circle {
   width: 100%;
-  aspect-ratio: 1;
+  aspect-ratio: 1 /1;
   background-color: rgb(60 51 77 / 77%);
   border-radius: 50%;
   padding: 10px;
@@ -928,229 +813,6 @@ main {
 
 // todo pageTasks end ====================
 
-// todo popup start ======================
-.section-popup {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  overflow: hidden;
-  z-index: -1;
-  &.active {
-    z-index: 999;
-  }
-}
-
-.popup {
-  transform: translateY(108%);
-  margin: 0px 10px;
-  position: absolute;
-  bottom: 0;
-  z-index: 110;
-  left: 0px;
-  right: 0px;
-  background: rgb(108 76 144 / 25%);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(8px);
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s;
-
-  &.active {
-    transform: translateY(0);
-  }
-}
-.popup_content {
-  width: 100%;
-  position: relative;
-  padding: 20px;
-  overflow: hidden;
-  background: linear-gradient(to bottom, rgb(45, 34, 62), rgba(24, 24, 29, 0));
-  border-radius: var(--borderRadius);
-  z-index: 1;
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  justify-content: flex-start;
-  box-shadow: 0px 0px 20px rgba(84, 31, 165, 0.7019607843);
-  flex-direction: column;
-
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: var(--borderRadius);
-    padding: 1px;
-    background: linear-gradient(
-      to right,
-      #ffffff,
-      #33a78200
-    ); // Градиент для рамки
-    -webkit-mask: linear-gradient(#fff 0 0) content-box,
-      linear-gradient(#fff 0 0);
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    z-index: -1;
-  }
-  hr {
-    width: 50%;
-    height: 6px;
-    background-color: #fff;
-    border-radius: 3px;
-  }
-  img {
-    height: 60px;
-  }
-  p {
-    font-size: 18px;
-    color: #ffffff;
-    text-align: center;
-    line-height: 1.5;
-  }
-
-  button {
-    width: 306px;
-    height: 75px;
-    position: relative;
-    padding: 20px;
-    overflow: hidden;
-    background: linear-gradient(
-      to bottom,
-      rgb(45, 34, 62),
-      rgba(24, 24, 29, 0)
-    );
-    border-radius: var(--borderRadius);
-    z-index: 1;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0px 0px 20px rgba(84, 31, 165, 0.7019607843);
-    flex-direction: row;
-
-    &::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: var(--borderRadius);
-      padding: 1px;
-      background: linear-gradient(to right, #ffffff, #33a78200);
-      -webkit-mask: linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      z-index: -1;
-    }
-    img {
-      height: 24px;
-    }
-
-    span {
-      font-size: 20px;
-      font-weight: bold;
-    }
-  }
-}
-
-.popup_content__input-sect {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.popup_content__input {
-  input[type="number"]::-webkit-outer-spin-button,
-  input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-
-  /* Скрыть стрелочки в Firefox */
-  input[type="number"] {
-    -moz-appearance: textfield; // для Firefox
-    appearance: textfield; // стандартное свойство
-  }
-}
-
-.not-active {
-  display: none !important;
-}
-
-.popup_content-div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-
-.centerHamsterGot_content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 20px;
-}
-
-.topExtractionStory_tabs {
-  width: 100%;
-  display: flex;
-  gap: 10px;
-  button {
-    height: 46px;
-    background: #ffffff1f;
-    &.active {
-      background: #432473;
-    }
-  }
-}
-.topExtractionStory_content {
-  width: 100%;
-  table {
-    width: 100%;
-    height: 200px;
-    border-collapse: collapse;
-
-    th {
-      font-weight: bold;
-      padding: 5px;
-      text-align: center;
-    }
-
-    td {
-      padding: 5px;
-      text-align: center;
-    }
-  }
-}
-
-.topExtractionStory_total {
-  width: 100%;
-  display: flex;
-  gap: 4px;
-
-  button {
-    display: flex;
-    flex-direction: column;
-    gap: 0px;
-    background: #52245ca1;
-
-    p {
-      font-size: 20px;
-      text-wrap: nowrap;
-    }
-    span {
-      font-size: 11px;
-      font-weight: unset;
-    }
-  }
-}
-
-// todo popup end ========================
-// todo page Tasks start ++++++++++++++++++++
-// todo page Tasks end ++++++++++++++++++++++
 // todo page partners start ++++++++++++++++++++
 .pagePartners {
 }
@@ -1164,16 +826,16 @@ main {
   padding-bottom: 20px;
 }
 .partners_level-percentage {
-  height: 59px;
   display: flex;
   justify-content: space-between;
   padding: 8px;
   gap: 8px;
   button {
+    height: 59px;
     width: 100%;
-    background: linear-gradient(to bottom, #5b137860, #5b137860);
+    background: linear-gradient(to bottom, #1a1031, #1a1031);
     &::before {
-      background: linear-gradient(to right, #7900a8, rgba(51, 167, 130, 0));
+      background: linear-gradient(to right, #7900a8, #33a78200);
     }
     p {
       font-size: 12px;
@@ -1239,6 +901,14 @@ main {
     border-radius: var(--borderRadius);
     padding: 0 10px;
     min-width: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    gap: 10px;
+    img {
+      height: 19px;
+    }
   }
 }
 
@@ -1253,8 +923,8 @@ main {
   padding: 20px;
   text-align: center;
   font-size: 14px;
-  line-height: 0.9;
-  background: linear-gradient(to bottom, #5b137860, #5b137860);
+  line-height: 1.1;
+  background: linear-gradient(to bottom, #1a1031, #1a1031);
   &::before {
     background: linear-gradient(to right, #7900a8, rgba(51, 167, 130, 0));
   }

@@ -1,0 +1,217 @@
+.section-popup {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  &.active {
+    z-index: 999;
+  }
+}
+
+.popup {
+  transform: translateY(108%);
+  margin: 0px 10px;
+  bottom: 0;
+  z-index: 110;
+  left: 0px;
+  right: 0px;
+  background: rgba(108, 76, 144, 0.25);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(8px);
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+  width: 100%;
+  max-width: var(--maxWidth);
+  &.active {
+    transform: translateY(0);
+  }
+}
+.popup_content {
+  width: 100%;
+  position: relative;
+  padding: 20px;
+  overflow: hidden;
+  background: linear-gradient(to bottom, rgb(45, 34, 62), rgba(24, 24, 29, 0));
+  border-radius: var(--borderRadius);
+  z-index: 1;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+  box-shadow: 0px 0px 20px rgba(84, 31, 165, 0.7019607843);
+  flex-direction: column;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: var(--borderRadius);
+    padding: 1px;
+    background: linear-gradient(
+      to right,
+      #ffffff,
+      #33a78200
+    ); // Градиент для рамки
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+  }
+  hr {
+    width: 50%;
+    height: 6px;
+    background-color: #fff;
+    border-radius: 3px;
+  }
+  img {
+    height: 60px;
+  }
+  p {
+    font-size: 18px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  button {
+    width: 306px;
+    height: 75px;
+    position: relative;
+    padding: 20px;
+    overflow: hidden;
+    background: linear-gradient(
+      to bottom,
+      rgb(45, 34, 62),
+      rgba(24, 24, 29, 0)
+    );
+    border-radius: var(--borderRadius);
+    z-index: 1;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 20px rgba(84, 31, 165, 0.7019607843);
+    flex-direction: row;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: var(--borderRadius);
+      padding: 1px;
+      background: linear-gradient(to right, #ffffff, #33a78200);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      z-index: -1;
+    }
+    img {
+      height: 24px;
+    }
+
+    span {
+      font-size: 20px;
+      font-weight: bold;
+    }
+  }
+}
+
+.popup_content__input-sect {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.popup_content__input {
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Скрыть стрелочки в Firefox */
+  input[type="number"] {
+    -moz-appearance: textfield; // для Firefox
+    appearance: textfield; // стандартное свойство
+  }
+}
+
+.popup_content-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.centerHamsterGot_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.topExtractionStory_tabs {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  button {
+    height: 46px;
+    background: #ffffff1f;
+    &.active {
+      background: #432473;
+    }
+  }
+}
+.topExtractionStory_content {
+  width: 100%;
+  table {
+    width: 100%;
+    height: 200px;
+    border-collapse: collapse;
+
+    th {
+      font-weight: bold;
+      padding: 5px;
+      text-align: center;
+    }
+
+    td {
+      padding: 5px;
+      text-align: center;
+    }
+  }
+}
+
+.topExtractionStory_total {
+  width: 100%;
+  display: flex;
+  gap: 4px;
+
+  button {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    background: #52245ca1;
+
+    p {
+      font-size: 20px;
+      text-wrap: nowrap;
+    }
+    span {
+      font-size: 11px;
+      font-weight: unset;
+    }
+  }
+}

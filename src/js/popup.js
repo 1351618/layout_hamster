@@ -9,6 +9,17 @@ const popupNotActiveBtn = document.querySelectorAll(".popupNotActive");
 const popupNextBtn = document.querySelectorAll(".popupNext");
 const hiddenDiv = document.querySelectorAll(".hiddenDiv");
 
+// // попап блоки для скрытия
+// const popupBlock = {
+//   addInform: document.querySelector(".addInform"),
+//   centerHamsterGot: document.querySelector(".centerHamsterGot"),
+//   topExtractionStory: document.querySelector(".topExtractionStory"),
+// };
+// // копки для запуса попапов
+// const popupBtn = {
+//   addInformBtn: document.getElementById("addInformBtn"),
+// };
+
 // <!-- данные для попаов -->
 const addInformBtnData = { namePopap: "addInform" };
 const centerHamsterGotBtnData = { namePopap: "centerHamsterGot" };

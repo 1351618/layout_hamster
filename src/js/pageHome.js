@@ -8,6 +8,7 @@ const balanceWithdraw_Btn = document.querySelector(
 
 const backHome_Btn = document.getElementById("home_btn");
 
+/** сюда добавляем блоки которые будут скрываться  */
 const centerTopBlock = {
   centrExtraction: document.querySelector(".centr_extraction"),
   centrWell: document.querySelector(".centr-well"),
@@ -21,6 +22,8 @@ const centerTopBlock = {
   withdrawSection: document.querySelector(".withdraw"),
   centerSection: document.querySelector(".center"),
 };
+
+/** это для каритнок с хомяком (отдельно)  */
 const hamsterImg = {
   hNormal: document.querySelector(".hamster-normal"),
   hBust: document.querySelector(".hamster-bust"),
@@ -39,6 +42,7 @@ let hamsterBust = false;
 
 /** home | clickBtnBust  | replenish | withdraw*/
 let topBlockActive = "home";
+/**  */
 let hamsterImgActive = "hNormal";
 
 function hamsterImgHiden() {
@@ -49,6 +53,8 @@ function hamsterImgHiden() {
     element.classList.add("hiden");
   });
 }
+
+/** тут логика  что отображается если в переменной topBlockActive" присвоенно например "home" */
 function centerTopBlockShow() {
   if (topBlockActive === "home") {
     centerTopBlock["centerSection"].classList.remove("hiden");
@@ -88,6 +94,7 @@ bust_Btn.addEventListener("click", () => {
   colorAssignment();
 });
 
+/** функция проверки и назначение цвета приложения  */
 function colorAssignment() {
   if (hamsterBust) {
     updateColors("#e9a433", "#ffc1079c", "#c47410b3");

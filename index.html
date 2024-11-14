@@ -311,12 +311,135 @@
 
     <!-- todo page Tasks start ++++++++++++++++++++ -->
     <div id="pageTasks" class="pageTasks page hiden">
-      <main class="main">pageTasks</main>
+      <main class="main">
+        <section class="top">
+          <div class="top_balance BFS">
+            <div class="top_balance__left">
+              <img
+                src="./src//images/cryptocurrency-color_usdt.svg"
+                alt="usdt.svg"
+              />
+              <div>
+                <span>Баланс</span>
+                <p>100 USDT</p>
+              </div>
+            </div>
+            <div class="top_balance__right">
+              <button class="top_balance__right-replenish">
+                <img src="./src//images/ph_hand-withdraw.svg" alt="svg" />
+                <span>Пополнить</span>
+              </button>
+              <button class="top_balance__right-withdraw">
+                <img src="./src//images/ph_hand-withdraw (1).svg" alt="svg" />
+                <span>Вывести</span>
+              </button>
+            </div>
+          </div>
+        </section>
+        <section class="user-choice">
+          <div class="user-choice_statistics statistics-participant BFS">
+            <p>Выполнено заданий: <b>100</b></p>
+            <p>Доступно заданий: <b> 10 </b></p>
+            <p>Заработано: <b> 100 DTM </b></p>
+          </div>
+          <div class="user-choice_statistics statistics-advertiser BFS">
+            <p>Добавлено заданий: <b>10</b></p>
+            <p>Активные задания: <b> 10 </b></p>
+            <p>
+              Бюджет: <b> 35 USDT </b
+              ><button><img src="./src/images/add_btn.png" alt="" /></button>
+            </p>
+          </div>
+          <div class="user-choice_switch">
+            <button id="participant" class="active BFS">Участникам</button>
+            <button id="advertiser" class="BFS">Рекламодателям</button>
+          </div>
+        </section>
+        <section class="user-content">
+          <div class="user-content_participant">
+            <div class="content_participant_first BFS">
+              <p>
+                Участники с бесплатным хомяком зарабатывают<br />
+                <b> по 50 DTM за каждое выполненное задание. </b><br /><br />
+                Участники с рабочим хомяком зарабатывают<br />
+                <b> по 150 DTM за каждое выполненное задание. </b>
+              </p>
+            </div>
+            <div class="content_participant_second">
+              <div>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Название</th>
+                      <th>Задание</th>
+                      <th>Ссылка</th>
+                      <th>Статус</th>
+                    </tr>
+                  </thead>
+                  <tbody id="cps_tableBody"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="user-content_advertiser">
+            <div class="user-content_advertiser__unput">
+              <p>Выберите тип задания:</p>
+              <div class="div-input frame1 BFS">
+                <input type="text" placeholder="Подписка на Telegram" />
+              </div>
+            </div>
+            <div class="user-content_advertiser__unput">
+              <p>Добавить ссылку:</p>
+              <div class="div-input frame1 BFS">
+                <input type="text" placeholder="https: //t.me/…" />
+              </div>
+            </div>
+            <div class="user-content_advertiser__unput">
+              <p>Количество выполнений:</p>
+              <div class="div-input frame1 BFS">
+                <input type="text" placeholder="1000" />
+              </div>
+            </div>
+            <p>Итоговая стоимость за 1000 выполнений:</p>
+            <h2>50 USDT</h2>
+            <button class="add-task BFS">
+              <img src="" alt="" />
+              <p>Добавить задание</p>
+            </button>
+            <p class="add-task-top">Ваши задания:</p>
+            <div class="content_advertiser_second">
+              <div>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Название</th>
+                      <th>Задание</th>
+                      <th>Ссылка</th>
+                      <th>Статус</th>
+                    </tr>
+                  </thead>
+                  <tbody id="cps_tableBody"></tbody>
+                </table>
+              </div>
+            </div>
+            <div class="instruction BFS">
+              Чтобы мы могли проверять выполнение заданий по подписке на <br />
+              канал, вы должны добавить в администраторы своего канала <br />
+              нашего бота: <br />
+              <a href="">@dtmchek</a> <br />
+              <br />
+              bot Бота необходимо добавлять без прав.
+            </div>
+          </div>
+        </section>
+      </main>
     </div>
     <!-- todo page Tasks end ++++++++++++++++++++++ -->
     <!-- todo page partners start ++++++++++++++++++++ -->
-    <div id="pagePartners" class="pagePartners page hiden">
-      <main class="main">
+    <div id="pagePartners" class="pagePartners page hiden BRB">
+      <main class="main BRR">
         <section
           id="partners-partners"
           class="partners-partners partners-section"
@@ -820,5 +943,6 @@
     <script src="./src/js/pageSettings.js" type="module"></script>
     <script src="./src/js/pagePartners.js" type="module"></script>
     <script src="./src/js/dialogues.js" type="module"></script>
+    <script src="./src/js/pageTasks.js" type="module"></script>
   </body>
 </html>

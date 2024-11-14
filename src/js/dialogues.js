@@ -50,7 +50,7 @@ function startHamsterMessages() {
 
   setInterval(() => {
     // Достаем текущую фразу и выводим её в консоль
-    console.log(hamsterTexts[typeHamster].phrases[index]);
+    // console.log(hamsterTexts[typeHamster].phrases[index]);
     dialoguesHamster.textContent = hamsterTexts[typeHamster].phrases[index];
 
     // Увеличиваем индекс; если достигнут конец массива, сбрасываем на 0

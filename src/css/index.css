@@ -156,7 +156,7 @@ input {
 }
 
 .btnC {
-  background: linear-gradient(to right, rgba(64, 26, 65, 0.7882352941), rgba(63, 26, 65, 0.7411764706));
+  background: linear-gradient(to right, #401a41, #3f1a41);
 }
 .btnC ::before {
   background: linear-gradient(to right, #ffffff, rgba(51, 167, 130, 0));

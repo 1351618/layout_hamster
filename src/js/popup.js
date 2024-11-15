@@ -2,25 +2,20 @@ const popupSection = document.querySelector(".section-popup");
 const popupDiv = document.querySelector(".popup");
 const popupContentDiv = document.querySelector(".popup_content");
 
+/** кнопк запуска попапов */
 const addInformBtn = document.getElementById("addInformBtn");
 const centerHamsterGotBtn = document.getElementById("centerHamsterGot");
 const topExtractionStoryBtn = document.getElementById("topExtractionStoryBtn");
+const addTaskBtn = document.getElementById("addTaskBtn");
+const replenishTaskBtn = document.getElementById("replenishTaskBtn");
+
+/** кнопки закрытия или перехода на след вкладку если она не одна */
 const popupNotActiveBtn = document.querySelectorAll(".popupNotActive");
 const popupNextBtn = document.querySelectorAll(".popupNext");
+
 const hiddenDiv = document.querySelectorAll(".hiddenDiv");
 
-// // попап блоки для скрытия
-// const popupBlock = {
-//   addInform: document.querySelector(".addInform"),
-//   centerHamsterGot: document.querySelector(".centerHamsterGot"),
-//   topExtractionStory: document.querySelector(".topExtractionStory"),
-// };
-// // копки для запуса попапов
-// const popupBtn = {
-//   addInformBtn: document.getElementById("addInformBtn"),
-// };
-
-// <!-- данные для попаов -->
+// <!-- данные для попаов, если этого нет то попап закрется -->
 const addInformBtnData = { namePopap: "addInform" };
 const centerHamsterGotBtnData = { namePopap: "centerHamsterGot" };
 const topExtractionStoryBtnData = {
@@ -40,6 +35,8 @@ const topExtractionStoryBtnData = {
     { date: "31.07.2024", hired: "50 USDT", timeLeft: "19 д. 23:54:13" },
   ],
 };
+const addTaskBtnData = { namePopap: "addTask" };
+const replenishTaskBtnData = { namePopap: "replenishTask" };
 
 /**
  * Открытие попапа с добавлением класса "active"
@@ -69,10 +66,10 @@ function notActivePopupDiv() {
 /**
  * Функция для отрисовки текущего элемента из массива `content` внутри `popapData`
  */
-
 function renderPopupContent(popapData) {
   // Проверка на наличие элемента с классом, который передан в popapData.namePopap
   const targetDiv = popupContentDiv.querySelector(`.${popapData.namePopap}`);
+  console.log(targetDiv);
 
   // Если элемент не найден, закрываем попап
   if (!targetDiv) {
@@ -207,24 +204,34 @@ function renderPopupContent(popapData) {
       });
     });
   }
+
+  if (popapData.namePopap === "addTask") {
+    activePopupDiv();
+  }
+  if (popapData.namePopap === "replenishTask") {
+    activePopupDiv();
+  }
 }
 
-// Обработчик кнопкок
-addInformBtn.addEventListener("click", () => {
-  renderPopupContent(addInformBtnData);
-});
+/** Обработчик кнопкок */
+{
+  // добавляем нажатую кнопку и ее даннве
+  const buttonData = [
+    { button: addInformBtn, data: addInformBtnData },
+    { button: centerHamsterGotBtn, data: centerHamsterGotBtnData },
+    { button: topExtractionStoryBtn, data: topExtractionStoryBtnData },
+    { button: addTaskBtn, data: addTaskBtnData },
+    { button: replenishTaskBtn, data: replenishTaskBtnData },
+  ];
 
-centerHamsterGotBtn.addEventListener("click", () => {
-  renderPopupContent(centerHamsterGotBtnData);
-});
-
-topExtractionStoryBtn.addEventListener("click", () => {
-  renderPopupContent(topExtractionStoryBtnData);
-});
+  buttonData.forEach(({ button, data }) => {
+    button.addEventListener("click", () => renderPopupContent(data));
+  });
+}
 
 popupNotActiveBtn.forEach((button) => {
   button.addEventListener("click", () => {
-    notActivePopupDiv(); // Ваш код для закрытия попапа
+    notActivePopupDiv(); // закрытия попапа
   });
 });
 

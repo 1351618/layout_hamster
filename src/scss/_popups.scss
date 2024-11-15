@@ -215,3 +215,24 @@
     }
   }
 }
+
+// todo addTask start --------------------------------
+.addTask {
+}
+
+.addTask_input {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  align-items: center;
+
+  gap: 20px;
+  p {
+    text-align: start;
+  }
+}
+.addTask_input__div-input {
+  width: 100%;
+  // max-width: 440px;
+}
+// todo addTask end   --------------------------------

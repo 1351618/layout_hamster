@@ -8,6 +8,15 @@
   border: 2px solid #3cff00;
 }
 
+.delBtn {
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-size: 10px;
+  color: burlywood;
+}
+
 // Basic Frame Style
 .BFS {
   position: relative;
@@ -56,6 +65,12 @@
   }
 }
 
+.PC {
+  color: var(--mainStylelight);
+  font-weight: bold;
+  font-size: 24px;
+}
+
 .div-input {
   width: 150px;
   height: 40px;
@@ -93,6 +108,8 @@
   &::before {
     background: linear-gradient(to right, #0e7fb8, #33a78200);
   }
+}
+.btnC {
 }
 
 .frame1 {

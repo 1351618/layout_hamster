@@ -404,8 +404,8 @@
               </div>
             </div>
             <p>Итоговая стоимость за 1000 выполнений:</p>
-            <h2>50 USDT</h2>
-            <button class="add-task BFS">
+            <h2 class="PC">50 USDT</h2>
+            <button id="addTaskBtn" class="add-task BFS">
               <img src="" alt="" />
               <p>Добавить задание</p>
             </button>
@@ -422,7 +422,17 @@
                       <th>Статус</th>
                     </tr>
                   </thead>
-                  <tbody id="cps_tableBody"></tbody>
+                  <tbody id="cps_tableBody">
+                    <tr>
+                      <td>1</td>
+                      <td>Задача 1</td>
+                      <td>Описание задачи 1</td>
+                      <td class="table-link">
+                        <a href="https://example.com/1">Ссылка</a>
+                      </td>
+                      <td>Выполнено</td>
+                    </tr>
+                  </tbody>
                 </table>
               </div>
             </div>
@@ -435,6 +445,9 @@
               bot Бота необходимо добавлять без прав.
             </div>
           </div>
+          <button id="replenishTaskBtn" class="delBtn">
+            popup 2 pageTasks <br />replenishTaskBtn
+          </button>
         </section>
       </main>
     </div>
@@ -928,7 +941,48 @@
               </div>
             </div>
           </div>
-          <!--  topExtractionStory end -->
+          <!--  addTask start -->
+          <div class="addTask popup_content-div not-active">
+            <hr />
+            <br />
+            <div class="addTask_input">
+              <p>Тип задания:</p>
+              <div class="addTask_input__div-input div-input BFS">
+                <input type="text" placeholder="Подписка на Telegram" />
+              </div>
+            </div>
+            <div class="addTask_input">
+              <p>Ваша ссылка:</p>
+              <div class="addTask_input__div-input div-input BFS">
+                <input type="text" placeholder="https: //t.me/…" />
+              </div>
+            </div>
+            <div class="addTask_input">
+              <p>Добавить выполнения:</p>
+              <div class="addTask_input__div-input div-input BFS">
+                <input type="text" placeholder="1000" />
+              </div>
+            </div>
+            <p>Итоговая стоимость за 1000 выполнений:</p>
+            <h2 class="PC">85 USDT</h2>
+          </div>
+          <div class="addTask_add-del">
+            <button class="btnB BFS">
+              <img src="" alt="" />
+              <p>Добавить задание</p>
+            </button>
+            <button class="btnC BFS">
+              <img src="" alt="" />
+              <p>Удалить</p>
+            </button>
+          </div>
+          <!--  addTask end -->
+          <!--  replenishTask start -->
+          <div class="replenishTask popup_content-div not-active">
+            <hr />
+            <br />replenishTask
+          </div>
+          <!--  replenishTask end -->
         </div>
       </div>
     </section>

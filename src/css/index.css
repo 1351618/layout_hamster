@@ -1316,6 +1316,7 @@ html {
 }
 .levels_level__title p {
   font-size: 24px;
+  font-weight: bold;
 }
 .levels_level__title span {
   font-size: 16px;
@@ -1456,7 +1457,7 @@ html {
 .friends-block-bottom {
   display: flex;
   justify-content: space-between;
-  gap: 8px;
+  gap: 5%;
   padding: 5px 0px;
 }
 
@@ -1475,7 +1476,7 @@ html {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-direction: row;
 }
 .friends-block-bottom_cell-bottom img {
@@ -1583,6 +1584,12 @@ html {
   display: flex;
   gap: 10px;
   width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.settings_wallet-address_save-delit button {
+  width: 100%;
+  max-width: 100%;
 }
 
 .settings_wallet-address_save {

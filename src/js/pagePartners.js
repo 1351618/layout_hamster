@@ -88,14 +88,14 @@ function addFriendBlock(friendData) {
             <b>Депозит:</b>
             <div class="friends-block-bottom_cell-bottom">
               <span>${friendData.deposit}</span>
-              <img src="./src/images/DM_gold.svg" alt="" />
+              <img src="./src/images/cryptocurrency-color_green_usdt.png" alt="" />
             </div>
           </div>
           <div class="friends-block-bottom_cell">
             <b>Реклама:</b>
             <div class="friends-block-bottom_cell-bottom">
               <span>${friendData.advertisement}</span>
-              <img src="./src/images/DM_gold.svg" alt="" />
+              <img src="./src/images/cryptocurrency-color_green_usdt.png" alt="" />
             </div>
           </div>
           <div class="friends-block-bottom_cell">
@@ -109,7 +109,7 @@ function addFriendBlock(friendData) {
             <div>-</div>
             <div class="friends-block-bottom_cell-bottom">
               <span>${friendData.total}</span>
-              <img src="./src/images/DM_gold.svg" alt="" />
+              <img src="./src/images/cryptocurrency-color_green_usdt.png" alt="" />
             </div>
           </div>
         </div>

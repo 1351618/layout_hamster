@@ -48,7 +48,7 @@
             </div>
             <button
               id="centr-extraction-bust_Btn"
-              class="centr_extraction__right-btn"
+              class="centr_extraction__right-btn btnE"
             >
               <img src="./src/images/hamster_top.svg" alt="" />
               <span>БУСТ ХОМЯКА</span>
@@ -90,6 +90,14 @@
               <p>100.02 DTM</p>
             </div>
           </button>
+          <div class="IM BFS hiden">
+            <h2>Ваш хомяк ушёл.</h2>
+            <p>
+              Вы можете выполнить все задания <br />и нанять бесплатного хомяка
+              ещё на 10 дней.
+            </p>
+            important message
+          </div>
           <div class="hamster-circle">
             <span class="hamster-circle_inner-shadow"></span>
             <canvas id="circleBar" class="circleBar"></canvas>
@@ -124,7 +132,7 @@
               <img src="./src/images/notification.svg" alt="" />
             </button>
           </div>
-          <button class="hire-hamster-btn">НАНЯТЬ ХОМЯКА</button>
+          <button class="hire-hamster-btn btnE">НАНЯТЬ ХОМЯКА</button>
           <button class="hire-hamster-terms-btn">Условия найма хомяка</button>
         </section>
         <section class="replenish">
@@ -134,6 +142,7 @@
             <button class="BFS">USDT TON</button>
             <button class="BFS">USDT Polygon</button>
           </div>
+
           <div class="replenish_content BFS">
             <div class="replenish_content-summ-inp">
               <p>Сумма пополнения:</p>
@@ -150,7 +159,7 @@
             <div class="replenish_content__key">
               <p>T389240233jewjfbsi938s20f32</p>
               <button class="btnB BFS">
-                <img src="./src/images/bxs_copy.png" alt="" />
+                <img src="./src/images/bxs_copy_white.png" alt="" />
               </button>
             </div>
             <div class="replenish_content__story BFS">
@@ -405,8 +414,8 @@
             </div>
             <p>Итоговая стоимость за 1000 выполнений:</p>
             <h2 class="PC">50 USDT</h2>
-            <button id="addTaskBtn" class="add-task BFS">
-              <img src="" alt="" />
+            <button id="addTaskBtn" class="add-task btnD BFS">
+              <img src="./src/images/add whihe.png" alt="" />
               <p>Добавить задание</p>
             </button>
             <p class="add-task-top">Ваши задания:</p>
@@ -825,7 +834,7 @@
               в любое время. <br />Счётчик обновится.
             </p>
             <br />
-            <button class="popupNotActive">
+            <button class="popupNotActive btnC BFS">
               <img src="./src/images/check_mark.svg" alt="" />
               <span>Понятно</span>
             </button>
@@ -860,7 +869,7 @@
               </div>
               <span>Вы получите: <b>2 USDT</b> на свой баланс</span>
               <br />
-              <button class="popupNext">
+              <button class="popupNext BFS btnC">
                 <img src="./src/images/DM_gold.svg" alt="" />
                 <span>Продать DTM</span>
               </button>
@@ -874,7 +883,7 @@
               </p>
 
               <br />
-              <button class="popupNotActive">
+              <button class="popupNotActive BFS btnC">
                 <img src="./src/images/check_mark.svg" alt="" />
                 <span>Понятно</span>
               </button>
@@ -951,36 +960,61 @@
                 <input type="text" placeholder="Подписка на Telegram" />
               </div>
             </div>
+            <br />
             <div class="addTask_input">
               <p>Ваша ссылка:</p>
               <div class="addTask_input__div-input div-input BFS">
                 <input type="text" placeholder="https: //t.me/…" />
               </div>
             </div>
+            <br />
             <div class="addTask_input">
               <p>Добавить выполнения:</p>
               <div class="addTask_input__div-input div-input BFS">
                 <input type="text" placeholder="1000" />
               </div>
             </div>
+            <br />
             <p>Итоговая стоимость за 1000 выполнений:</p>
+            <br />
             <h2 class="PC">85 USDT</h2>
+            <br />
+            <br />
+            <div class="addTask_add-del">
+              <button class="btnD BFS">
+                <img src="./src/images/add whihe.png" alt="" />
+                <p>Добавить задание</p>
+              </button>
+              <button class="btnE BFS">
+                <img src="./src/images/iconamoon_trash-thin.png" alt="" />
+                <p>Удалить</p>
+              </button>
+            </div>
           </div>
-          <div class="addTask_add-del">
-            <button class="btnB BFS">
-              <img src="" alt="" />
-              <p>Добавить задание</p>
-            </button>
-            <button class="btnC BFS">
-              <img src="" alt="" />
-              <p>Удалить</p>
-            </button>
-          </div>
+
           <!--  addTask end -->
           <!--  replenishTask start -->
           <div class="replenishTask popup_content-div not-active">
             <hr />
-            <br />replenishTask
+            <br />
+            <div class="replenishTask_input">
+              <p>Ваша ссылка:</p>
+              <div class="replenishTask_input__div-input div-input BFS">
+                <input type="text" placeholder="https: //t.me/…" />
+              </div>
+            </div>
+            <br />
+            <br />
+            <p>
+              Средства будут списаны с вашего баланса и <br />возврату не
+              подлежат. <br /><b> Ваш бюджет будет составлять 85 USDT. </b>
+            </p>
+            <br />
+            <br />
+            <button class="btnD BFS">
+              <img src="./src/images/add whihe.png" alt="" />
+              <p>Пополнить</p>
+            </button>
           </div>
           <!--  replenishTask end -->
         </div>

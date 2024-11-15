@@ -85,16 +85,9 @@
   button {
     width: 306px;
     height: 75px;
-    position: relative;
     padding: 20px;
-    overflow: hidden;
-    background: linear-gradient(
-      to bottom,
-      rgb(45, 34, 62),
-      rgba(24, 24, 29, 0)
-    );
+
     border-radius: var(--borderRadius);
-    z-index: 1;
     display: flex;
     gap: 10px;
     align-items: center;
@@ -102,20 +95,6 @@
     box-shadow: 0px 0px 20px rgba(84, 31, 165, 0.7019607843);
     flex-direction: row;
 
-    &::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: var(--borderRadius);
-      padding: 1px;
-      background: linear-gradient(to right, #ffffff, #33a78200);
-      -webkit-mask: linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      z-index: -1;
-    }
     img {
       height: 24px;
     }
@@ -218,6 +197,9 @@
 
 // todo addTask start --------------------------------
 .addTask {
+  h2 {
+    width: 100%;
+  }
 }
 
 .addTask_input {
@@ -235,4 +217,34 @@
   width: 100%;
   // max-width: 440px;
 }
+
+.addTask_add-del {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  gap: 4%;
+  button {
+    width: 100%;
+  }
+}
 // todo addTask end   --------------------------------
+// todo replenishTask start  --------------------------------
+.replenishTask {
+}
+.replenishTask_input {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  align-items: center;
+
+  gap: 20px;
+  p {
+    text-align: start;
+  }
+}
+
+.replenishTask_input__div-input {
+  width: 100%;
+}
+
+// todo replenishTask end   --------------------------------

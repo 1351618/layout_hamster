@@ -137,6 +137,10 @@ input {
   border: none;
 }
 
+.btnA {
+  background: linear-gradient(to right, rgba(91, 48, 165, 0.5215686275), rgba(94, 51, 167, 0.2509803922));
+}
+
 .btnB {
   display: flex;
   align-items: center;
@@ -149,6 +153,30 @@ input {
 }
 .btnB::before {
   background: linear-gradient(to right, #0e7fb8, rgba(51, 167, 130, 0));
+}
+
+.btnC {
+  background: linear-gradient(to right, rgba(64, 26, 65, 0.7882352941), rgba(63, 26, 65, 0.7411764706));
+}
+.btnC ::before {
+  background: linear-gradient(to right, #ffffff, rgba(51, 167, 130, 0));
+}
+
+.btnD {
+  background: linear-gradient(to right, rgba(91, 48, 165, 0.5215686275), rgba(94, 51, 167, 0.2509803922));
+  border: 1px solid #fff;
+}
+
+.btnE {
+  background: linear-gradient(to bottom, #f04548, #990003);
+  border: 1px solid #f04548;
+}
+
+.IM {
+  text-align: center;
+  background: #3e0a12;
+  width: 100%;
+  padding: 3%;
 }
 
 .frame1::before {
@@ -315,31 +343,14 @@ main {
 .popup_content button {
   width: 306px;
   height: 75px;
-  position: relative;
   padding: 20px;
-  overflow: hidden;
-  background: linear-gradient(to bottom, rgb(45, 34, 62), rgba(24, 24, 29, 0));
   border-radius: var(--borderRadius);
-  z-index: 1;
   display: flex;
   gap: 10px;
   align-items: center;
   justify-content: center;
   box-shadow: 0px 0px 20px rgba(84, 31, 165, 0.7019607843);
   flex-direction: row;
-}
-.popup_content button::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: var(--borderRadius);
-  padding: 1px;
-  background: linear-gradient(to right, #ffffff, rgba(51, 167, 130, 0));
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  z-index: -1;
 }
 .popup_content button img {
   height: 24px;
@@ -435,6 +446,10 @@ main {
   font-weight: unset;
 }
 
+.addTask h2 {
+  width: 100%;
+}
+
 .addTask_input {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -447,6 +462,31 @@ main {
 }
 
 .addTask_input__div-input {
+  width: 100%;
+}
+
+.addTask_add-del {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  gap: 4%;
+}
+.addTask_add-del button {
+  width: 100%;
+}
+
+.replenishTask_input {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  align-items: center;
+  gap: 20px;
+}
+.replenishTask_input p {
+  text-align: start;
+}
+
+.replenishTask_input__div-input {
   width: 100%;
 }
 
@@ -670,8 +710,6 @@ html {
 
 .centr_extraction__right-btn {
   border-radius: var(--borderRadius);
-  background: linear-gradient(to bottom, #f04548, #990003);
-  border: 1px solid #f04548;
   display: flex;
   gap: 4px;
   flex-direction: column;
@@ -942,8 +980,6 @@ html {
 
 .hire-hamster-btn {
   border-radius: var(--borderRadius);
-  background: linear-gradient(to bottom, #f04548, #990003);
-  border: 1px solid #f04548;
   display: flex;
   gap: 4px;
   flex-direction: column;
@@ -1004,6 +1040,7 @@ html {
   flex-direction: column;
   align-items: center;
   width: 100%;
+  margin-top: 1%;
 }
 .replenish_content span,
 .withdraw_content span {
@@ -1210,10 +1247,9 @@ html {
 }
 
 .add-task {
-  border: 1px solid #fff;
   height: 62px;
   width: 100%;
-  background: linear-gradient(to right, rgba(91, 48, 165, 0.5215686275), rgba(94, 51, 167, 0.2509803922));
+  gap: 10px;
   display: flex;
   flex-direction: row;
   align-items: center;

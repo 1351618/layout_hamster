@@ -95,7 +95,13 @@
 }
 
 .btnA {
+  background: linear-gradient(
+    to right,
+    rgba(91, 48, 165, 0.5215686275),
+    rgba(94, 51, 167, 0.2509803922)
+  );
 }
+
 .btnB {
   display: flex;
   align-items: center;
@@ -110,6 +116,29 @@
   }
 }
 .btnC {
+  background: linear-gradient(to right, #401a41c9, #3f1a41bd);
+  ::before {
+    background: linear-gradient(to right, #ffffff, #33a78200);
+  }
+}
+
+.btnD {
+  background: linear-gradient(to right, #5b30a585, #5e33a740);
+  border: 1px solid #fff;
+}
+
+// красная кнопка
+.btnE {
+  background: linear-gradient(to bottom, #f04548, #990003);
+  border: 1px solid #f04548;
+}
+
+// important message
+.IM {
+  text-align: center;
+  background: #3e0a12;
+  width: 100%;
+  padding: 3%;
 }
 
 .frame1 {

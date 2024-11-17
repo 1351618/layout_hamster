@@ -1223,6 +1223,7 @@ html {
 }
 .part-first_div p {
   font-size: 12px;
+  text-align: start;
 }
 .part-first_div .img-wrapper {
   position: relative;

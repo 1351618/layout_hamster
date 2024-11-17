@@ -1,5 +1,9 @@
 const participant = document.getElementById("participant");
 const advertiser = document.getElementById("advertiser");
+const contentParticipantSecond = document.querySelector(
+  ".content_participant_second"
+);
+
 /** блоки для скрытия и отображения */
 const pageTasksHidingBlocks = {
   useChStatParticipant: document.querySelector(".statistics-participant"),
@@ -134,28 +138,36 @@ const contentParticipantSecondTableData = [
 
 // Функция для добавления данных в таблицу
 function populateTable() {
-  const tableBody = document.getElementById("cps_tableBody"); // Получаем элемент tbody таблицы
+  //   const tableBody = document.getElementById("cps_tableBody"); // Получаем элемент tbody таблицы
 
   // Перебираем все данные
   contentParticipantSecondTableData.forEach((row) => {
     // Создаем строку таблицы
-    const tr = document.createElement("tr");
+    // const tr = document.createElement("tr");
+    const div = document.createElement("div");
+    div.classList.add("cps-block", "BFS", "btnF");
 
-    // Добавляем ячейки в строку
-    tr.innerHTML = `
-        <td>${row.id}</td>
-        <td>${row.name}</td>
-        <td>${row.task}</td>
-        <td class="table-link"><a href="${row.link}">Перейти</a></td>
-        <td>${
-          row.status === "Активен"
-            ? '<img src="./src/images/green check mark.png" alt="">'
-            : row.status
-        }</td>
-      `;
+    // Добавляем содержимое
+    div.innerHTML = `
+        <div class="cps-block_cont">
+            <span>id</span>
+            <span>Название</span>
+            <p>${row.id}</p>
+            <p>${row.name}</p>
+            <span>Задание</span>
+            <span>Статус</span>
+            <p>Подписка</p>
+    
+                <p>${
+                  row.status === "Активен"
+                    ? '<img src="./src/images/green check mark.png" alt="">'
+                    : row.status
+                }</p>
+        </div>
+        <a href="${row.link}">Перейти</a>
+    `;
 
-    // Добавляем строку в таблицу
-    tableBody.appendChild(tr);
+    contentParticipantSecond.appendChild(div);
   });
 }
 

@@ -8,6 +8,7 @@ const centerHamsterGotBtn = document.getElementById("centerHamsterGot");
 const topExtractionStoryBtn = document.getElementById("topExtractionStoryBtn");
 const addTaskBtn = document.getElementById("addTaskBtn");
 const replenishTaskBtn = document.getElementById("replenishTaskBtn");
+const socSubscriptBtn = document.getElementById("soc-subscriptBtn");
 
 /** кнопки закрытия или перехода на след вкладку если она не одна */
 const popupNotActiveBtn = document.querySelectorAll(".popupNotActive");
@@ -37,6 +38,7 @@ const topExtractionStoryBtnData = {
 };
 const addTaskBtnData = { namePopap: "addTask" };
 const replenishTaskBtnData = { namePopap: "replenishTask" };
+const socSubscriptBtnData = { namePopap: "socSubscript" };
 
 /**
  * Открытие попапа с добавлением класса "active"
@@ -211,6 +213,9 @@ function renderPopupContent(popapData) {
   if (popapData.namePopap === "replenishTask") {
     activePopupDiv();
   }
+  if (popapData.namePopap === "socSubscript") {
+    activePopupDiv();
+  }
 }
 
 /** Обработчик кнопкок */
@@ -222,6 +227,7 @@ function renderPopupContent(popapData) {
     { button: topExtractionStoryBtn, data: topExtractionStoryBtnData },
     { button: addTaskBtn, data: addTaskBtnData },
     { button: replenishTaskBtn, data: replenishTaskBtnData },
+    { button: socSubscriptBtn, data: socSubscriptBtnData },
   ];
 
   buttonData.forEach(({ button, data }) => {

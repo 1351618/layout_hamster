@@ -123,7 +123,7 @@
 }
 
 .btnD {
-  background: linear-gradient(to right, #5b30a585, #5e33a740);
+  background: linear-gradient(to right, #3b1a75d4, #180d2ac9);
   border: 1px solid #fff;
 }
 
@@ -131,6 +131,11 @@
 .btnE {
   background: linear-gradient(to bottom, #f04548, #990003);
   border: 1px solid #f04548;
+}
+.btnF {
+  &::before {
+    background: linear-gradient(to right, #6f2b67, rgba(51, 167, 130, 0));
+  }
 }
 
 // important message

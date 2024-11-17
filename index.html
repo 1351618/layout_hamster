@@ -368,30 +368,27 @@
         </section>
         <section class="user-content">
           <div class="user-content_participant">
-            <div class="content_participant_first BFS">
-              <p>
-                Участники с бесплатным хомяком зарабатывают<br />
-                <b> по 50 DTM за каждое выполненное задание. </b><br /><br />
-                Участники с рабочим хомяком зарабатывают<br />
-                <b> по 150 DTM за каждое выполненное задание. </b>
-              </p>
-            </div>
-            <div class="content_participant_second">
-              <div>
-                <table>
-                  <thead>
-                    <tr>
-                      <th>ID</th>
-                      <th>Название</th>
-                      <th>Задание</th>
-                      <th>Ссылка</th>
-                      <th>Статус</th>
-                    </tr>
-                  </thead>
-                  <tbody id="cps_tableBody"></tbody>
-                </table>
+            <div class="content_participant_first">
+              <div class="part-first_left part-first_div BFS">
+                <div class="img-wrapper">
+                  <img src="./src/images/ham_free_min.png" alt="" />
+                </div>
+                <p>
+                  Участники с бесплатным хомяком зарабатывают<br />
+                  <b> по 50 DTM за каждое выполненное задание. </b><br /><br />
+                </p>
+              </div>
+              <div class="part-first_right part-first_div BFS">
+                <div class="img-wrapper">
+                  <img src="./src/images/ham_job_min.png" alt="" />
+                </div>
+                <p>
+                  Участники с рабочим хомяком зарабатывают<br />
+                  <b> по 150 DTM за каждое выполненное задание. </b>
+                </p>
               </div>
             </div>
+            <div class="content_participant_second"></div>
           </div>
           <div class="user-content_advertiser">
             <div class="user-content_advertiser__unput">
@@ -456,6 +453,9 @@
           </div>
           <button id="replenishTaskBtn" class="delBtn">
             popup 2 pageTasks <br />replenishTaskBtn
+          </button>
+          <button id="soc-subscriptBtn" class="delBtn" style="top: 25px">
+            popup 3 pageTasks <br />soc-subscriptBtn
           </button>
         </section>
       </main>
@@ -854,6 +854,7 @@
       </label>
     </footer>
 
+    <!-- POPUP ============================================================= -->
     <section class="section-popup">
       <div class="popup">
         <div class="popup_content">
@@ -1018,7 +1019,7 @@
             <br />
             <br />
             <div class="addTask_add-del">
-              <button class="btnC BFS">
+              <button class="btnD BFS">
                 <img src="./src/images/add whihe.png" alt="" />
                 <p>Добавить задание</p>
               </button>
@@ -1048,12 +1049,49 @@
             </p>
             <br />
             <br />
-            <button class="btnC BFS">
+            <button class="btnD BFS">
               <img src="./src/images/add whihe.png" alt="" />
               <p>Пополнить</p>
             </button>
           </div>
           <!--  replenishTask end -->
+
+          <!-- socSubscript start -->
+          <div class="socSubscript popup_content-div not-active">
+            <hr />
+            <br />
+            <a href="" class="BFS btnD"
+              ><img src="./src/images/ic_twotone-telegram.png" alt="" />
+              <p>Подписка на Telegram</p></a
+            >
+            <br />
+            <a href="" class="BFS btnD"
+              ><img src="./src/images/material-symbols_chat.png" alt="" />
+              <p>Вступить в чат</p></a
+            >
+            <br />
+            <a href="" class="BFS btnD"
+              ><img src="./src/images/bxs_bot.png" alt="" />
+              <p>Активировать бота</p></a
+            >
+            <br />
+            <a href="" class="BFS btnD"
+              ><img src="./src/images/prime_twitter.png" alt="" />
+              <p>Подписка на Х</p></a
+            >
+            <br />
+            <a href="" class="BFS btnD"
+              ><img src="./src/images/mdi_youtube.png" alt="" />
+              <p>Подписка на YouTube</p></a
+            >
+            <br />
+            <a href="" class="BFS btnD"
+              ><img src="./src/images/gridicons_video.png" alt="" />
+              <p>Просмотр ролика</p></a
+            >
+            <br />
+          </div>
+          <!-- socSubscript end -->
         </div>
       </div>
     </section>

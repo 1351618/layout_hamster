@@ -1221,10 +1221,8 @@ html {
   padding: 12px 8px;
   box-shadow: unset;
 }
-@media (max-width: 440px) {
-  .part-first_div {
-    flex-direction: column;
-  }
+.part-first_div p {
+  font-size: 12px;
 }
 .part-first_div .img-wrapper {
   position: relative;

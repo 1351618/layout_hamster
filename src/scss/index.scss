@@ -424,44 +424,24 @@ html {
 }
 
 .center_hamster-got {
-  height: auto;
   min-height: 75px;
+  max-width: 306px;
+  padding: 6px 16px;
 
-  position: relative;
-  padding: 6px 10vw;
-  overflow: hidden;
-  background: linear-gradient(to right, rgb(64 26 65), rgb(63 26 65));
-  border-radius: var(--borderRadius);
-  z-index: 1;
   display: flex;
   align-items: center;
   gap: 10px;
-  //   box-shadow: 0px 0px 20px #5b30a585, 0px 0px 20px #5b30a585;
 
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: var(--borderRadius);
-    padding: 1px;
-    background: linear-gradient(
-      to right,
-      #cacaca,
-      #5b30a50c
-    ); // Градиент для рамки
-    -webkit-mask: linear-gradient(#fff 0 0) content-box,
-      linear-gradient(#fff 0 0);
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    z-index: -1;
-  }
   span {
     font-size: 16px;
+    display: block;
+    text-align: justify;
   }
   p {
     font-size: 32px;
     font-weight: bold;
+    white-space: nowrap;
+
     @media (max-width: 440px) {
       font-size: 25px;
     }

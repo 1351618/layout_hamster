@@ -934,37 +934,22 @@ html {
 }
 
 .center_hamster-got {
-  height: auto;
   min-height: 75px;
-  position: relative;
-  padding: 6px 10vw;
-  overflow: hidden;
-  background: linear-gradient(to right, rgb(64, 26, 65), rgb(63, 26, 65));
-  border-radius: var(--borderRadius);
-  z-index: 1;
+  max-width: 306px;
+  padding: 6px 16px;
   display: flex;
   align-items: center;
   gap: 10px;
 }
-.center_hamster-got::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: var(--borderRadius);
-  padding: 1px;
-  background: linear-gradient(to right, #cacaca, rgba(91, 48, 165, 0.0470588235));
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  z-index: -1;
-}
 .center_hamster-got span {
   font-size: 16px;
+  display: block;
+  text-align: justify;
 }
 .center_hamster-got p {
   font-size: 32px;
   font-weight: bold;
+  white-space: nowrap;
 }
 @media (max-width: 440px) {
   .center_hamster-got p {

@@ -77,7 +77,6 @@ input {
   background: linear-gradient(to bottom, rgba(14, 43, 71, 0), rgba(14, 43, 71, 0));
   border-radius: var(--borderRadius);
   z-index: 1;
-  box-shadow: 0px 0px 20px rgba(84, 31, 165, 0.7019607843);
 }
 .BFS::before {
   content: "";
@@ -132,9 +131,15 @@ input {
   width: 100%;
   padding: 0 10px;
   background-color: unset;
-  font-size: 24px;
+  font-size: 16px;
   color: #fff;
   border: none;
+}
+.div-input input::-moz-placeholder {
+  color: #ffffff;
+}
+.div-input input::placeholder {
+  color: #ffffff;
 }
 
 .btnA {
@@ -156,7 +161,7 @@ input {
 }
 
 .btnC {
-  background: linear-gradient(to right, #401a41, #3f1a41);
+  background: linear-gradient(to right, rgba(93, 19, 107, 0.6705882353), rgba(93, 19, 107, 0.6705882353));
 }
 .btnC ::before {
   background: linear-gradient(to right, #ffffff, rgba(51, 167, 130, 0));
@@ -173,7 +178,7 @@ input {
 }
 
 .btnF::before {
-  background: linear-gradient(to right, #6f2b67, rgba(51, 167, 130, 0));
+  background: linear-gradient(to right, rgb(248, 67, 214), rgba(51, 167, 130, 0));
 }
 
 .IM {
@@ -212,7 +217,7 @@ main {
 
 .footer {
   position: fixed;
-  bottom: 0;
+  bottom: -5px;
   max-width: var(--maxWidth);
   width: 100%;
   display: flex;
@@ -223,8 +228,8 @@ main {
   align-items: flex-end;
 }
 .footer label {
-  height: 73px;
-  width: 71px;
+  height: 71px;
+  width: 74px;
   position: relative;
   padding: 10px;
   overflow: hidden;
@@ -240,7 +245,7 @@ main {
 .footer label.active {
   height: 74px;
   background: #000;
-  box-shadow: 0px -3px 12px rgba(84, 31, 165, 0.7019607843), 0px -5px 19px rgba(84, 31, 165, 0.7019607843);
+  box-shadow: rgb(103, 87, 211) 0px 1px 12px, rgb(103, 87, 211) 0px 1px 19px;
 }
 .footer label.active::before {
   background: unset;
@@ -339,10 +344,10 @@ main {
   height: 60px;
 }
 .popup_content p {
-  font-size: 18px;
+  font-size: 16px;
   color: #ffffff;
   text-align: center;
-  line-height: 1.5;
+  line-height: 1.3;
 }
 .popup_content button {
   width: 306px;
@@ -470,13 +475,30 @@ main {
 }
 
 .addTask_add-del {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
   width: 100%;
   gap: 4%;
+  flex-direction: row;
+  align-items: center;
 }
 .addTask_add-del button {
+  width: 244px;
+  height: 62px;
+}
+.addTask_add-del button.addTask_del-btn {
+  width: 146px;
+}
+
+.replenishTask p {
   width: 100%;
+  text-align: left;
+}
+.replenishTask button {
+  width: 100%;
+  display: flex;
+}
+.replenishTask button p {
+  width: auto;
 }
 
 .replenishTask_input {
@@ -546,6 +568,13 @@ input {
   display: none !important;
 }
 
+button,
+input,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
 html {
   background-color: var(--backgroundColor);
   flex-direction: column;
@@ -572,7 +601,7 @@ html {
   min-height: 75px;
   flex-wrap: wrap;
   padding: 6px;
-  background: linear-gradient(to right, rgba(51, 167, 130, 0.3607843137), rgba(51, 167, 130, 0.2196078431));
+  background: linear-gradient(to right, rgba(51, 167, 130, 0.19), rgba(51, 167, 130, 0.19));
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -630,12 +659,12 @@ html {
 .top_balance__right button {
   width: auto;
   min-width: 77px;
-  height: 100%;
+  height: 65px;
   display: flex;
   max-height: 66px;
   gap: 4px;
   border-radius: var(--borderRadius);
-  background-color: rgba(175, 190, 241, 0.1019607843);
+  background-color: rgba(255, 255, 255, 0.09);
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -715,7 +744,7 @@ html {
   }
 }
 .centr_extraction__left-data div button {
-  background-color: rgba(255, 255, 255, 0.1411764706);
+  background-color: rgba(255, 255, 255, 0.09);
   height: 24px;
   width: 87px;
   border-radius: var(--borderRadius);
@@ -737,6 +766,7 @@ html {
   justify-content: center;
   width: 135px;
   padding: 4px;
+  font-size: 12px;
 }
 @media (max-width: 440px) {
   .centr_extraction__right-btn {
@@ -813,12 +843,13 @@ html {
 
 .center {
   flex-grow: 1;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   padding-top: 10px;
-  gap: 2%;
+  gap: 28px;
 }
 
 .hamster-circle {
@@ -906,7 +937,7 @@ html {
   height: auto;
   min-height: 75px;
   position: relative;
-  padding: 6px 12px;
+  padding: 6px 10vw;
   overflow: hidden;
   background: linear-gradient(to right, rgb(64, 26, 65), rgb(63, 26, 65));
   border-radius: var(--borderRadius);
@@ -941,7 +972,7 @@ html {
   }
 }
 .center_hamster-got img {
-  width: 45px;
+  width: 57px;
   aspect-ratio: 1;
 }
 @media (max-width: 440px) {
@@ -1039,6 +1070,7 @@ html {
   width: 100%;
   border-radius: var(--borderRadius);
   background-color: #3e3d45;
+  font-size: 14px;
 }
 .replenish_list-crypto button::before,
 .withdraw_list-crypto button::before {
@@ -1064,7 +1096,9 @@ html {
 }
 .replenish_content span,
 .withdraw_content span {
-  padding: 10px;
+  padding: 10px 14px 0;
+  width: 100%;
+  font-size: 14px;
 }
 
 .withdraw_content-summ-inp,
@@ -1078,8 +1112,11 @@ html {
 }
 .withdraw_content-summ-inp p,
 .replenish_content-summ-inp p {
-  width: 100%;
-  font-size: 24px;
+  font-size: 20px;
+}
+
+.replenish_content-summ-inp_div {
+  width: 151px;
 }
 
 .withdraw_content__add-option,
@@ -1108,7 +1145,7 @@ html {
 }
 .withdraw_content__key p,
 .replenish_content__key p {
-  font-size: 24px;
+  font-size: 20px;
   width: 100%;
   padding: 0 3%;
 }
@@ -1120,13 +1157,14 @@ html {
 }
 
 .withdraw_div-input {
-  height: 56px;
+  height: 40px;
   margin: 11px;
   width: 90%;
 }
 
 .withdraw_btn {
   max-width: 300px;
+  height: 53px;
 }
 
 .withdraw_content__story,
@@ -1162,11 +1200,13 @@ html {
   justify-content: space-between;
   width: 100%;
   gap: 4%;
-  margin-top: 2%;
+  margin-top: 5px;
+  min-height: 101px;
 }
 
 .user-choice_statistics {
   width: 100%;
+  height: 104px;
   background: linear-gradient(to right, rgba(91, 48, 165, 0.5215686275), rgba(94, 51, 167, 0.2509803922));
   display: flex;
   flex-direction: column;
@@ -1174,6 +1214,7 @@ html {
   align-items: flex-start;
   padding: 0 0 0 4%;
   min-height: 100px;
+  box-shadow: unset;
 }
 .user-choice_statistics p {
   display: flex;
@@ -1191,13 +1232,12 @@ html {
   max-width: 195px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 12px;
+  justify-content: flex-start;
+  gap: 5px;
 }
 .user-choice_switch button {
   width: 100%;
-  min-height: 45px;
-  height: 100%;
+  height: 45px;
   background: linear-gradient(to bottom, #3e3d45, #3e3d45);
   font-size: 16px;
 }
@@ -1218,12 +1258,14 @@ html {
 .part-first_div {
   display: flex;
   gap: 4%;
-  padding: 12px 8px;
+  padding: 12px 12px 0;
   box-shadow: unset;
+  min-height: 142px;
 }
 .part-first_div p {
   font-size: 12px;
   text-align: start;
+  line-height: 1.3;
 }
 .part-first_div .img-wrapper {
   position: relative;
@@ -1263,6 +1305,7 @@ html {
   overflow: unset;
   padding: 4%;
   width: 100%;
+  min-height: 148px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1291,13 +1334,15 @@ html {
 
 .cps-block_cont {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 2fr;
   padding: 2%;
-  gap: 4px;
+  row-gap: 6px;
+  -moz-column-gap: 22px;
+       column-gap: 22px;
 }
 
 .content_advertiser_second {
-  margin-top: 20px;
+  margin: 20px 0;
 }
 .content_advertiser_second table {
   width: 100%;
@@ -1305,8 +1350,27 @@ html {
 }
 .content_advertiser_second td,
 .content_advertiser_second th {
-  margin: 2px 5%;
+  padding: 5px 3px 5px 10px;
   font-size: 12px;
+  text-align: left;
+  white-space: nowrap;
+  font-weight: unset;
+}
+.content_advertiser_second td.table-link,
+.content_advertiser_second th.table-link {
+  padding: 3px 0px;
+  margin-top: 7px;
+  height: 21px;
+}
+.content_advertiser_second button {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 4px 8px;
+  white-space: nowrap;
+}
+.content_advertiser_second td .table-link {
+  display: inline-block;
+  white-space: nowrap;
 }
 
 .table-link {
@@ -1316,25 +1380,32 @@ html {
   border-radius: var(--borderRadius);
   background-color: #26262d;
   border: 1px solid #8a52d4;
+  height: 22px;
 }
 
 .user-content_advertiser {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  margin-top: 20px;
+  margin-top: 15px;
+  justify-content: flex-start;
 }
 
 .user-content_advertiser__unput {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  margin: 0 0 19px 0px;
 }
 .user-content_advertiser__unput p {
   width: 100%;
 }
 .user-content_advertiser__unput div {
   width: 100%;
+}
+
+.user-content_advertiser_p {
+  margin-top: 12px;
 }
 
 .add-task-top {
@@ -1355,11 +1426,14 @@ html {
   font-size: 16px;
   margin-top: 20px;
 }
+.add-task::before {
+  background: unset;
+}
 
 .instruction {
   text-align: center;
-  padding: 2%;
-  color: rgba(255, 255, 255, 0.4);
+  padding: 13px;
+  color: rgb(95, 100, 109);
   font-size: 12px;
 }
 .instruction a {
@@ -1522,6 +1596,14 @@ html {
   font-size: 16px;
 }
 
+.find-friends_F-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
 .partners_back-main-section {
   height: 36px;
 }
@@ -1538,6 +1620,13 @@ html {
 
 .friends-withdrawal_block-data {
   padding: 10px;
+  height: 142px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.friends-withdrawal_block-data::before {
+  background: linear-gradient(to right, rgb(138, 82, 212), rgba(51, 167, 130, 0));
 }
 
 .friends-block-top {
@@ -1564,6 +1653,7 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  gap: 4px;
 }
 .friends-block-bottom_cell b {
   font-size: 14px;
@@ -1576,6 +1666,10 @@ html {
   align-items: center;
   justify-content: space-around;
   flex-direction: row;
+  gap: 3px;
+}
+.friends-block-bottom_cell-bottom span {
+  white-space: nowrap;
 }
 .friends-block-bottom_cell-bottom img {
   height: 20px;
@@ -1606,6 +1700,7 @@ html {
   height: 40px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.4392156863);
   width: 100%;
+  align-items: center;
 }
 .settings_main button img {
   height: 25px;
@@ -1655,8 +1750,8 @@ html {
 }
 
 .settings_back-main-btn {
-  width: 306px;
-  height: 75px;
+  width: 193px;
+  height: 53px;
 }
 
 .settings_wallet-address {
@@ -1676,6 +1771,12 @@ html {
   align-items: center;
   gap: 20px;
   padding: 0 10px;
+}
+.settings_wallet-address_wrapper p {
+  font-weight: bold;
+}
+.settings_wallet-address_wrapper button {
+  font-size: 16px;
 }
 
 .settings_wallet-address_save-delit {
@@ -1723,7 +1824,7 @@ html {
 .settings_wallet-address_div-input {
   width: 100%;
   height: 40px;
-  padding: 2px;
+  padding: 1px;
 }
 .settings_wallet-address_div-input::before {
   background: linear-gradient(to right, #ffffff, #9433a7);
@@ -1731,7 +1832,7 @@ html {
 .settings_wallet-address_div-input input {
   height: 100%;
   width: 100%;
-  font-size: 18px;
+  font-size: 16px;
   background-color: #211539;
   border-radius: var(--borderRadius);
   padding: 0 20px;

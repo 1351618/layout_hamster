@@ -24,7 +24,7 @@
   background: linear-gradient(to bottom, #0e2b4700, #0e2b4700);
   border-radius: var(--borderRadius);
   z-index: 1;
-  box-shadow: 0px 0px 20px #541fa5b3;
+  // box-shadow: 0px 0px 20px #541fa5b3;
 
   &::before {
     content: "";
@@ -88,9 +88,12 @@
     width: 100%;
     padding: 0 10px;
     background-color: unset;
-    font-size: 24px;
+    font-size: 16px;
     color: #fff;
     border: none;
+    &::placeholder {
+      color: #ffffff;
+    }
   }
 }
 
@@ -116,7 +119,7 @@
   }
 }
 .btnC {
-  background: linear-gradient(to right, #401a41, #3f1a41);
+  background: linear-gradient(to right, #5d136bab, #5d136bab);
   ::before {
     background: linear-gradient(to right, #ffffff, #33a78200);
   }
@@ -134,7 +137,11 @@
 }
 .btnF {
   &::before {
-    background: linear-gradient(to right, #6f2b67, rgba(51, 167, 130, 0));
+    background: linear-gradient(
+      to right,
+      rgb(248 67 214),
+      rgba(51, 167, 130, 0)
+    );
   }
 }
 

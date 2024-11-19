@@ -16,7 +16,7 @@ const pageTasksHidingBlocks = {
 const contentParticipantSecondTableData = [
   {
     id: 13138,
-    name: "Название канала длинное очень...",
+    name: "Название канала",
     task: "Подписка",
 
     link: "#", // Вы можете заменить на реальную ссылку, если она есть
@@ -40,7 +40,7 @@ const contentParticipantSecondTableData = [
   },
   {
     id: 13138,
-    name: "Название канала длинное очень...",
+    name: "Название канала",
     task: "Подписка",
 
     link: "#", // Вы можете заменить на реальную ссылку, если она есть
@@ -64,7 +64,7 @@ const contentParticipantSecondTableData = [
   },
   {
     id: 13138,
-    name: "Название канала длинное очень...",
+    name: "Название канала",
     task: "Подписка",
 
     link: "#", // Вы можете заменить на реальную ссылку, если она есть
@@ -88,7 +88,7 @@ const contentParticipantSecondTableData = [
   },
   {
     id: 13138,
-    name: "Название канала длинное очень...",
+    name: "Название канала",
     task: "Подписка",
 
     link: "#", // Вы можете заменить на реальную ссылку, если она есть
@@ -112,7 +112,7 @@ const contentParticipantSecondTableData = [
   },
   {
     id: 13138,
-    name: "Название канала длинное очень...",
+    name: "Название канала",
     task: "Подписка",
 
     link: "#", // Вы можете заменить на реальную ссылку, если она есть
@@ -150,7 +150,7 @@ function populateTable() {
     // Добавляем содержимое
     div.innerHTML = `
         <div class="cps-block_cont">
-            <span>id</span>
+            <span>ID</span>
             <span>Название</span>
             <p>${row.id}</p>
             <p>${row.name}</p>

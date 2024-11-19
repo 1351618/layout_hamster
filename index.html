@@ -146,7 +146,7 @@
           <div class="replenish_content BFS">
             <div class="replenish_content-summ-inp">
               <p>Сумма пополнения:</p>
-              <div class="div-input BFS">
+              <div class="replenish_content-summ-inp_div div-input BFS">
                 <input type="text" placeholder="100" />
               </div>
             </div>
@@ -409,7 +409,9 @@
                 <input type="text" placeholder="1000" />
               </div>
             </div>
-            <p>Итоговая стоимость за 1000 выполнений:</p>
+            <p class="user-content_advertiser_p">
+              Итоговая стоимость за 1000 выполнений:
+            </p>
             <h2 class="PC">50 USDT</h2>
             <button id="addTaskBtn" class="add-task btnD BFS">
               <img src="./src/images/add whihe.png" alt="" />
@@ -430,13 +432,21 @@
                   </thead>
                   <tbody id="cps_tableBody">
                     <tr>
-                      <td>1</td>
-                      <td>Задача 1</td>
-                      <td>Описание задачи 1</td>
+                      <td>13138</td>
+                      <td>Название канала</td>
+                      <td>Подписка</td>
                       <td class="table-link">
-                        <a href="https://example.com/1">Ссылка</a>
+                        <a href="https://example.com/1">Перейти</a>
                       </td>
-                      <td>Выполнено</td>
+                      <td>
+                        350/1000
+                        <button class="table-link">
+                          <img
+                            src="./src//images/icon-park-solid_edit.png"
+                            alt=""
+                          />
+                        </button>
+                      </td>
                     </tr>
                   </tbody>
                 </table>
@@ -446,7 +456,7 @@
               Чтобы мы могли проверять выполнение заданий по подписке на <br />
               канал, вы должны добавить в администраторы своего канала <br />
               нашего бота: <br />
-              <a href="">@dtmchek</a> <br />
+              <a href="">@dtmchek bot</a> <br />
               <br />
               bot Бота необходимо добавлять без прав.
             </div>
@@ -661,7 +671,10 @@
                 <input type="text" placeholder="Имя" />
               </div>
             </div>
-            <button class="BFS"><img src="" alt="" />Найти друга</button>
+            <button class="find-friends_F-btn BFS">
+              <img src="./src/images/iconamoon_search-fill.png" alt="" />Найти
+              друга
+            </button>
           </div>
           <div class="h100 scroll">
             <div class="partners-friends_friends-withdrawal"></div>
@@ -749,7 +762,7 @@
               alt=""
             />Немецкий
           </button>
-          <br />
+
           <button class="settings_back-main-btn btnB BFS">Назад</button>
         </section>
         <section class="settings_theme settings-section">
@@ -760,7 +773,7 @@
           <button class="settings_theme__btn">
             <img src="./src/images/tabler_moon-filled.png" alt="" />Светлая
           </button>
-          <br />
+
           <button class="settings_back-main-btn btnB BFS">Назад</button>
         </section>
         <section class="settings_wallet-address settings-section scroll">
@@ -1023,7 +1036,7 @@
                 <img src="./src/images/add whihe.png" alt="" />
                 <p>Добавить задание</p>
               </button>
-              <button class="btnE BFS">
+              <button class="addTask_del-btn btnE BFS">
                 <img src="./src/images/iconamoon_trash-thin.png" alt="" />
                 <p>Удалить</p>
               </button>

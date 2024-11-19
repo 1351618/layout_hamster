@@ -76,10 +76,10 @@
     height: 60px;
   }
   p {
-    font-size: 18px;
+    font-size: 16px;
     color: #ffffff;
     text-align: center;
-    line-height: 1.5;
+    line-height: 1.3;
   }
 
   button {
@@ -219,17 +219,34 @@
 }
 
 .addTask_add-del {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
   width: 100%;
   gap: 4%;
+  flex-direction: row;
+  align-items: center;
   button {
-    width: 100%;
+    width: 244px;
+    height: 62px;
+    &.addTask_del-btn {
+      width: 146px;
+    }
   }
 }
+
 // todo addTask end   --------------------------------
 // todo replenishTask start  --------------------------------
 .replenishTask {
+  p {
+    width: 100%;
+    text-align: left;
+  }
+  button {
+    width: 100%;
+    display: flex;
+    p {
+      width: auto;
+    }
+  }
 }
 .replenishTask_input {
   display: grid;

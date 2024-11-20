@@ -5,6 +5,9 @@ const popupContentDiv = document.querySelector(".popup_content");
 /** кнопк запуска попапов */
 const addInformBtn = document.getElementById("addInformBtn");
 const centerHamsterGotBtn = document.getElementById("centerHamsterGot");
+const replenishDel1Btn = document.getElementById("replenish-del-1");
+const replenishDel2Btn = document.getElementById("replenish-del-2");
+const replenishDel3Btn = document.getElementById("replenish-del-3");
 const topExtractionStoryBtn = document.getElementById("topExtractionStoryBtn");
 const addTaskBtn = document.getElementById("addTaskBtn");
 const replenishTaskBtn = document.getElementById("replenishTaskBtn");
@@ -39,6 +42,10 @@ const topExtractionStoryBtnData = {
 const addTaskBtnData = { namePopap: "addTask" };
 const replenishTaskBtnData = { namePopap: "replenishTask" };
 const socSubscriptBtnData = { namePopap: "socSubscript" };
+
+const replenishDel1BtnData = { namePopap: "replenishDel1" };
+const replenishDel2BtnData = { namePopap: "replenishDel2" };
+const replenishDel3BtnData = { namePopap: "replenishDel3" };
 
 /**
  * Открытие попапа с добавлением класса "active"
@@ -216,6 +223,18 @@ function renderPopupContent(popapData) {
   if (popapData.namePopap === "socSubscript") {
     activePopupDiv();
   }
+  if (popapData.namePopap === "replenishDel1") {
+    console.log(1);
+    activePopupDiv();
+  }
+  if (popapData.namePopap === "replenishDel2") {
+    console.log(2);
+    activePopupDiv();
+  }
+  if (popapData.namePopap === "replenishDel3") {
+    console.log(3);
+    activePopupDiv();
+  }
 }
 
 /** Обработчик кнопкок */
@@ -228,6 +247,9 @@ function renderPopupContent(popapData) {
     { button: addTaskBtn, data: addTaskBtnData },
     { button: replenishTaskBtn, data: replenishTaskBtnData },
     { button: socSubscriptBtn, data: socSubscriptBtnData },
+    { button: replenishDel1Btn, data: replenishDel1BtnData },
+    { button: replenishDel2Btn, data: replenishDel2BtnData },
+    { button: replenishDel3Btn, data: replenishDel3BtnData },
   ];
 
   buttonData.forEach(({ button, data }) => {

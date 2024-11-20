@@ -532,6 +532,18 @@ main {
   font-size: 16px;
 }
 
+.replenishDel1 p,
+.replenishDel2 p,
+.replenishDel3 p {
+  font-size: 20px;
+  line-height: 1.26;
+}
+.replenishDel1 img,
+.replenishDel2 img,
+.replenishDel3 img {
+  height: 57px;
+}
+
 @font-face {
   font-family: "Inter-SemiBold";
   src: url("../fonts/Inter_18pt-SemiBold.ttf") format("truetype");
